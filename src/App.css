@@ -1,38 +1,84 @@
-.App {
+body{
+  margin: 0;
+  padding: 0;
+}
+*{
+  margin: 0;
+}
+.nimc{
+  width: 160px;
+  display: block;
+  margin: auto;
+}
+.description{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.account_form{
+  width: 80%;
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: left;
+  padding: 20px 10px;
+  box-shadow: 1px 1px 4px 4px rgba(211, 211, 211, 0.253);
+  transition: 300ms;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.account_form:hover{
+  box-shadow: 1px 1px 4px 4px rgba(211, 211, 211, 0.699);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.create_button{
+  text-align: center;
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 200px;
+  padding: 8px 20px;
+  background: green;
   color: white;
+  border: none;
+  outline: none;
+}
+.create_button:hover{
+  background: none;
+  border: 1px solid green;
+  color: green;
+}
+label{
+  color: #4c4c4c;
+}
+.existing_login{
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+.form_heading{
+  text-align: center;
+  font-size: 1em;
+}
+.instructions{
+  text-align: center;
+  font-size: 0.8em;
+}
+.enrolment_form{
+  width: 80%;
+  max-width: 700px;
+  margin: auto;
+}
+.block_heading{
+  text-align: center;
+  font-size: 1em;
+  background: lightgreen;
+  padding: 10px 0;
+}
+.block{
+  box-shadow: 1px 1px 4px 4px rgba(211, 211, 211, 0.253);
+}
+.block:hover{
+  box-shadow: 1px 1px 4px 4px rgba(211, 211, 211, 0.699);
 }
 
-.App-link {
-  color: #61dafb;
+@media(min-width:500px) and (max-width:899px){
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media(min-width:500px){
+  .account_form{
+    padding: 30px 50px 20px 50px;
   }
 }
