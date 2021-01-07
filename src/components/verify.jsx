@@ -3,10 +3,10 @@ import NIMClogo from './img/nimc.png'
 import Login from './login';
 
 function Verify({data}) {
-    const [phone, setPhone] = useState();
+    const [phone, setPhone] = useState(data.data.phone);
     const [code, setCode] = useState();
-    const [statusCode, setStatusCode] = useState(400)
-    const [verifyResponse, setVerifyResponse] = useState('');
+    // const [statusCode, setStatusCode] = useState(400)
+    // const [verifyResponse, setVerifyResponse] = useState('');
 
     console.log(data)
     const handleCode = ({target}) =>{
@@ -17,8 +17,6 @@ function Verify({data}) {
         phone: phone,
         token: code
     }
-
-    setPhone(data.data.phone)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,14 +39,12 @@ function Verify({data}) {
         .then((response) => response.json() )
         .then((data) => {
             console.log(data)
-            setVerifyResponse(data)
-            setStatusCode(data.status)
+            //setStatusCode(data.status)
+            window.location='/login'
         })
         .catch((err) => console.log(err));
     }
 
-    
-    if(statusCode === 400){
         return (
             <>
             <img src={NIMClogo} alt="NIMC Logo" className='nimc'/> 
@@ -62,10 +58,10 @@ function Verify({data}) {
                 </form>
             </>
         )
-    }
-    else if(statusCode === 201){
-        return <Login data={verifyResponse}/>
-    }
+    
+    // else if(statusCode === 201){
+    //     return <Login/>
+    // }
 }
 
 export default Verify
