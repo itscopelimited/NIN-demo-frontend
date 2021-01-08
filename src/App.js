@@ -22,7 +22,7 @@ function App() {
           <Route path='/login' component={Login}/>
           <Route path='/enrolmentform' component={Enrolmentform} />
           <Route path='/verify' component={Verify} />
-          <Route path='/profile' component={Profile}/>} />
+          <Route path='/profile' component={Profile} />
         </Switch>
       </Router>
     </>
