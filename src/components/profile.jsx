@@ -38,18 +38,18 @@ function Profile({data}) {
                     <p>{data.data.user.phone}</p> */}
                     <div className=" green lighten-3">
                         <div className="row">
-                            <div class="divider"></div>
-                            <div class="section">
+                            <div className="divider"></div>
+                            <div className="section">
                                 <p>NAME</p>
                                 <h5>{data.data.user.firstName} {data.data.user.lastName}</h5>
                             </div>
-                            <div class="divider"></div>
-                            <div class="section">
+                            <div className="divider"></div>
+                            <div className="section">
                                 <p>EMAIL</p>
                                 <h5>{data.data.user.email}</h5>
                             </div>
-                            <div class="divider"></div>
-                            <div class="section">
+                            <div className="divider"></div>
+                            <div className="section">
                                 <p>FORM COUNT</p>
                                 <h5>{formCounter()}</h5>
                             </div>

@@ -1,5 +1,6 @@
-import React,{useState}from 'react'
+import React,{useState, useEffect}from 'react'
 import NIMClogo from './img/nimc.png'
+import Spinner from './spinner'
 
 function Enrolmentform() {
     const [title, setTitle] = useState('')
@@ -77,11 +78,17 @@ function Enrolmentform() {
     const [nextOfKinNin, setnextOfKinNin] = useState('')
     
     // APPOINTMENT STATES
-    const [appointmentYear, setAppointmentyear] = useState('')
+    const [appointmentYear] = useState(2021)
     const [appointmentMonth, setAppointmentMonth] = useState('')
-    const [appointmentDay, setAppointmentDay] = useState('')
+    const [appointmentDay, setAppointmentDay] = useState()
     const [appointmentBranch, setAppointmentBranch] = useState('')
-    
+    const [loading, setLoading] = useState(false)
+    // const [defaultTime] = useState('')
+    // const [pickedTimes] = useState('')
+    const [availableTime, setavailableTime] = useState('')
+    const [timeResponse, setTimeResponse] = useState('')
+    const [selectedTime, setSelectedTime] = useState('')
+
     const handleTitle = ({target}) =>{
       setTitle(target.value)
     }
@@ -303,26 +310,84 @@ function Enrolmentform() {
     }
     
     // HANDLER FUNCTIONS FOR BOOKING
-    const handleAppointmentYear = ({target}) =>{
-      setAppointmentyear(target.value)
-    }
+    let token = sessionStorage.getItem('__browser_data')
+    useEffect(() => {
+      if(!token){
+        alert('Session Expired! Login to Access Form.')
+        window.location = '/login'
+      }
+    })
     const handleAppointmentMonth = ({target}) =>{
       setAppointmentMonth(target.value)
     }
     const handleAppointmentDay = ({target}) =>{
       setAppointmentDay(target.value)
     }
-    const handleAppointmentBranch = ({target}) =>{
+
+    const handleAppointmentBranch = async({target}) =>{
       setAppointmentBranch(target.value)
     }
 
+    const handleSelectedTime = ({target}) =>{
+      setSelectedTime(target.value)
+    }
+    
     const bookingData = {
       year: appointmentYear,
       month: appointmentMonth,
       date: appointmentDay,
       branch: appointmentBranch
     }
+    console.log(bookingData)
 
+    
+
+    const handleAppointmentBooking = async(e) =>{
+      e.preventDefault();
+      if(appointmentYear === '' || appointmentYear > 2021){
+        alert('Please Enter a Valid Year!')
+        return false
+      }
+      else if(appointmentMonth === ''){
+        alert('Please Enter a Valid Month')
+      }
+      else if(appointmentDay === '' || appointmentDay > 31){
+        alert('Please Enter a Valid Day')
+      }
+      else if(appointmentBranch === ''){
+        alert('Branch Field is Empty')
+      }
+      else{
+        setLoading(true)
+        await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/get/collection-time",
+            {
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                    "Access-Control-Allow-Origin": '*',
+                    "myqueu-x-token": `${token}`
+                },
+                method: "POST",
+                mode: 'cors',
+                body: JSON.stringify(bookingData)
+            })
+        .then((response) => response.json() )
+        .then((data) => {
+          console.log(data)
+            if(data.status === 200){
+              setLoading(false)
+              setavailableTime(data.data.availableTime)
+              setTimeResponse(data)
+            }
+            else if(data.status === 401){
+              setLoading(false)
+              alert('Session Expired! Login to Access Form.')
+              window.location='/login'
+            }
+          console.log(availableTime)
+        })
+        .catch((err) => console.log(err));
+      }
+    }
 
     const enrolmentForm = {
       title: title,
@@ -392,7 +457,12 @@ function Enrolmentform() {
       nextOfKinTown: nextOfKinTown,
       nextOfKinLga: nextOfKinLga,
       nextOfKinStreetAddress: nextOfKinStreetAddress,
-      nextOfKinNin: nextOfKinNin
+      nextOfKinNin: nextOfKinNin,
+      year: appointmentYear ,
+      date: appointmentDay ,
+      month: appointmentMonth,
+      branch: appointmentBranch ,
+      time: selectedTime
     }
     
     if(supportingDocuments === 'anyIdentityReference'){
@@ -451,8 +521,56 @@ function Enrolmentform() {
     }
        
     console.log(enrolmentForm)
-    const handleSubmit = () =>{
-
+    const handleSubmit = async(e) =>{
+      e.preventDefault();
+      // if(appointmentYear === '' || appointmentYear > 2021){
+      //   alert('Please Enter a Valid Year!')
+      //   return false
+      // }
+      // else if(appointmentMonth === ''){
+      //   alert('Please Enter a Valid Month')
+      // }
+      // else if(appointmentDay === '' || appointmentDay > 31){
+      //   alert('Please Enter a Valid Day')
+      // }
+      // else if(appointmentBranch === ''){
+      //   alert('Branch Field is Empty')
+      // }
+      // else{
+        setLoading(true)
+        await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/create/nin",
+            {
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                    "Access-Control-Allow-Origin": '*',
+                    "myqueu-x-token": `${token}`
+                },
+                method: "POST",
+                mode: 'cors',
+                body: JSON.stringify(bookingData)
+            })
+        .then((response) => response.json() )
+        .then((data) => {
+          console.log(data)
+            if(data.status === 200){
+              setLoading(false)
+            }
+            // else if(data.status === 401){
+            //   // alert('Session Expired! Login to Access Form.')
+            //   // window.location='/login'
+            // }
+            // else if(data.status === 400){
+            //   setLoading(false)
+            // }
+            else if(data.errors.title){
+              setLoading(false)
+              alert(data.errors.title)
+            }
+            
+          console.log(availableTime)
+        })
+        .catch((err) => console.log(err));
+      //}
     }
 
     return (
@@ -605,15 +723,14 @@ function Enrolmentform() {
                   {/* WHEN AND WHERE WERE YOU BORN? */}
                   <div className="names_block_B block row">
                       <h3 className="block_heading">WHEN AND WHERE WERE YOU BORN?</h3>
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="dateofbirth">DATE OF BIRTH:</label>
                         <input id='dateofbirth' onChange={handleDateOfBirth} type='date' required/>
                       </div>
                     
-                      <div className="input-field col s6">
-                        <label htmlFor="dobverification">DATE OF BIRTH VERIFICATION:</label>
+                      <div className="input-field col s12">
                         <select value={birthVerification} onChange={handleBirthVerification} className='browser-default' id="dobverification">
-                            <option disabled defaultValue=' '> </option>
+                            <option defaultValue='DATE OF BIRTH VERIFICATION'>DATE OF BIRTH VERIFICATION </option>
                             <option value="verified">Verified</option>
                             <option value="approximate">Approximate</option>
                             <option value="declared">Declared</option>
@@ -1007,13 +1124,12 @@ function Enrolmentform() {
                       "time": "8:30am" */}
                       <div className="input-field col s12">
                         <label htmlFor="year">Year</label>
-                        <input id='year' onChange={handleAppointmentYear} value='2021' type="text"/>
+                        <input id='year' defaultValue='2021' type="text"/>
                       </div>
 
                       <div className="input-field col s12">
-                        <label htmlFor="month">MONTH:</label>
                         <select value={appointmentMonth} onChange={handleAppointmentMonth} id="month" className='browser-default'>
-                          <option defaultValue=''> </option>
+                          <option defaultValue=''>MONTH</option>
                           <option value="Jan">Jan</option>
                           <option value="Feb">Feb</option>
                           <option value="Mar">March</option>
@@ -1030,9 +1146,8 @@ function Enrolmentform() {
                       </div>
 
                       <div className="input-field col s12">
-                        <label htmlFor="day">DAY</label>
                         <select value={appointmentDay} onChange={handleAppointmentDay} id="day" className='browser-default'>
-                          <option defaultValue='' > </option>
+                          <option defaultValue='' >DAY</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -1068,15 +1183,36 @@ function Enrolmentform() {
                       </div>
 
                       <div className="input-field col s12">
-                        <label htmlFor="location">BRANCH</label>
                         <select value={appointmentBranch} onChange={handleAppointmentBranch} id="location" className='browser-default'>
-                          <option defaultValue=''> </option>
+                          <option defaultValue=''>BRANCH</option>
                           <option value="lekki">Lekki Phase 1</option>
                           <option value="Ajah">Ajah</option>
                           <option value="Victoria Island">Victoria Island</option>
                           <option value="Ikoyi">Ikoyi</option>
                         </select>
                       </div>
+
+                      {availableTime ?
+                          <div className='input-field col s12'>
+                            <select id="time" value={selectedTime} onChange={handleSelectedTime} className='browser-default'>
+                              {availableTime ?
+                                availableTime.map(time => 
+                                    <option key={time} value={time}>{time}</option>
+                                ) : null}
+                            </select> 
+                          </div> : null
+                      }
+                      
+                      {!timeResponse ?  
+                            <button onClick={handleAppointmentBooking} className='btn green' style={{display:'block', margin:'20px auto'}}>
+                              Book appointment
+                            </button> : null
+                      }
+                     
+
+                      {loading === true ? <Spinner/> : null}
+                  
+                      {/* {availableTime ? } */}
                   </div>
 
                   {/* DECLARATION/ATTESTATION */}
@@ -1092,6 +1228,10 @@ function Enrolmentform() {
                           discovered.
                         </span>
                       </label>
+                      <button type='submit' className='btn green' style={{display:'block', margin:'20px auto'}}>
+                              SUBMIT
+                      </button>
+                      {loading === true ? <Spinner/> : null}
                   </div>
               </form>
           </div>  
