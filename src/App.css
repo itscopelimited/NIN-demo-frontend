@@ -73,7 +73,27 @@ label{
 .block:hover{
   box-shadow: 1px 1px 4px 4px rgba(211, 211, 211, 0.699);
 }
-
+.home-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+.container{
+  padding: 30px 0;
+  text-align: center;
+}
+.home-buttons button{
+  margin: 20px 10px;
+  color: white;
+}
+.preloader-wrapper{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
 @media(min-width:500px) and (max-width:899px){
   
 }

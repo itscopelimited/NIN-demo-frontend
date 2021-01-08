@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import NIMClogo from './img/nimc.png'
 import {Link} from 'react-router-dom'
 import Verify from './verify'
+import Spinner from './spinner'
 
 function Createaccount() {
 
@@ -13,6 +14,7 @@ function Createaccount() {
     // const [statusCode, setStatusCode] = useState(400)
     const [responseData, setResponseData] = useState('')
     const [count, setCount] = useState(0)
+    const [loading, setLoading] = useState(false)
     
     const handleFirstName = ({target}) =>{
         setFirstName(target.value)
@@ -64,6 +66,7 @@ function Createaccount() {
             return false
         }
         else{
+            setLoading(true)
             await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/register",
                 {
                     headers: {
@@ -79,12 +82,15 @@ function Createaccount() {
                 console.log(data)
                 if(data.errors.password){
                     alert(`${data.errors.password}`)
+                    setLoading(false)
                 }
                 else if(data.errors.phone){
                     alert(`${data.errors.phone}`)
+                    setLoading(false)
                 }
                 else if(data.errors.email){
                     alert(`${data.errors.email}`)
+                    setLoading(false)
                 }
                 // setStatusCode(data.status)
                 else if(data.status === 201){
@@ -136,15 +142,16 @@ function Createaccount() {
                             <button type='submit' className='create_button' name='action'>
                                 Create Account
                             </button>
-
-                            <p className='existing_login'>
-                                Already have an account? &nbsp;  
-                                <Link to='/login'>
-                                    Login
-                                </Link>
-                            </p>
                         </div>
-                    </form>   
+                    </form>  
+                    {loading === true ? <Spinner/> : null}
+
+                    <p className='existing_login'>
+                        Already have an account? &nbsp;  
+                        <Link to='/login'>
+                            Login
+                        </Link>
+                    </p> 
             </>
         )
     } 

@@ -1,9 +1,8 @@
 import React,{useState} from 'react'
 import NIMClogo from './img/nimc.png'
-import Login from './login';
 
 function Verify({data}) {
-    const [phone, setPhone] = useState(data.data.phone);
+    const [phone] = useState(data.data.phone);
     const [code, setCode] = useState();
     // const [statusCode, setStatusCode] = useState(400)
     // const [verifyResponse, setVerifyResponse] = useState('');
@@ -47,15 +46,19 @@ function Verify({data}) {
 
         return (
             <>
-            <img src={NIMClogo} alt="NIMC Logo" className='nimc'/> 
-                <p style={{color:'green'}}>{data.message}!</p>
-                <form onSubmit={handleSubmit} action="" method='POST'>
-                    <div className="input-field col s12">
-                        <label htmlFor="verify">Enter Verification Code: </label>
-                        <input onChange={handleCode} type="text" id='verify' className='validate'/>
+                <div className='home-container'>
+                    <div className='container z-depth-4'>
+                        <img src={NIMClogo} alt="NIMC Logo" className='nimc'/> 
+                        <p style={{color:'green', margin: '20px 0 0 0'}}>{data.message}!</p>
+                        <form onSubmit={handleSubmit} action="" method='POST'>
+                            <div className="input-field col s12" style={{textAlign:'center', width:'300px'}}>
+                                <label htmlFor="verify">Enter Verification Code: </label>
+                                <input onChange={handleCode} type="text" id='verify' className='validate'/>
+                            </div>
+                            <button type='submit' className='create_button'>Submit</button>
+                        </form>
                     </div>
-                    <button type='submit' className='create_button'>Submit</button>
-                </form>
+                </div>
             </>
         )
     

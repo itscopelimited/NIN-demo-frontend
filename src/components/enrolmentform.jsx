@@ -1,13 +1,380 @@
-import React,{useState} from 'react'
+import React,{useState}from 'react'
 import NIMClogo from './img/nimc.png'
 
 function Enrolmentform() {
-    // const [changedname, setchangedname] = useState('')
-    // const changednameHandler = ({target}) =>{
-    //   setchangedname(target.value)
-    //   console.log(changedname)
+    const [title, setTitle] = useState('')
+    const [firstName, setfirstName] = useState('')
+    const [lastName, setlastName] = useState('')
+    const [marriedWoman, setMarriedWoman] = useState('')
+    const [maidenName, setmaidenName] = useState('')
+    const [nameChange, setnameChange] = useState('')
+    const [previousSurname, setpreviousSurname] = useState('')
+    const [previousFirstName, setpreviousFirstName] = useState('')
+    const [previousMiddleName, setpreviousMiddleName] = useState('')
+    const [homeless, setHomeless] = useState('')
+    const [cityOfResidence, setcityOfResidence] = useState('')
+    const [countryOfResidence, setcountryOfResidence] = useState('')
+    const [stateOfResidence, setstateOfResidence] = useState('')
+    const [lgaOfResidence, setLgaOfResidence] = useState('')
+    const [addressOfResidence, setAddressOfResidence] = useState('')
+    const [postalCode, setPostalCode] = useState('')
+    const [dateOfBirth, setdateOfBirth] = useState('')
+    const [birthVerification, setbirthVerification] = useState('')
+    const [birthCountry, setbirthCountry] = useState('')
+    const [birthLga, setbirthLga] = useState('')
+    const [birthState, setbirthState] = useState('')
+    const [originCountry, setoriginCountry] = useState('')
+    const [originState, setoriginState] = useState('')
+    const [originLga, setoriginLga] = useState('')
+    const [originTown, setoriginTown] = useState('')
+    const [fatheroriginCountry, setfatheroriginCountry] = useState('')
+    const [fatheroriginState, setfatheroriginState] = useState('')
+    const [fatheroriginLga, setfatheroriginLga] = useState('')
+    const [fatheroriginTown, setfatheroriginTown] = useState('')
+    const [motheroriginCountry, setmotheroriginCountry] = useState('')
+    const [motheroriginState, setmotheroriginState] = useState('')
+    const [motheroriginLga, setmotheroriginLga] = useState('')
+    const [motheroriginTown, setmotheroriginTown] = useState('')
+    const [gender, setGender] = useState('')
+    const [height, setHeight] = useState('')
+    const [residenceStatus, setResidenceStatus] = useState('')
+    const [nationality, setNationality] = useState('')
+    const [supportingDocuments, setsupportingDocuments] = useState('')
+    const [supportingDocumentNumber, setdocumentNumber] = useState(null)
+    const [documentExpiryDate, setdocumentExpiryDate] = useState(null)
+    const [maritalStatus, setmaritalStatus] = useState('')
+    const [nativeLanguage, setNativeLanguage] = useState('')
+    const [languagesYouReadAndWrite, setlanguagesYouReadAndWrite] = useState('')
+    const [otherLanguagesSpoken, setotherLanguagesSpoken] = useState('')
+    const [educationLevel, seteducationLevel] = useState('')
+    const [religion, setReligion] = useState('')
+    const [telephone, setTelephone] = useState('')
+    const [employmentStatus, setEmploymentStatus] = useState('')
+    const [emailAddress, setEmailAddress] = useState('')
+    const [occupation, setOccupation] = useState('')
+    const [fathersSurname, setfathersSurname] = useState('')
+    const [fathersFirstName, setfathersFirstName] = useState('')
+    const [fathersMiddleName, setfathersMiddleName] = useState('')
+    const [fathersNin, setfathersNin] = useState('')
+    const [mothersSurname, setmothersSurname] = useState('')
+    const [mothersFirstName, setmothersFirstName] = useState('')
+    const [mothersMiddleName, setmothersMiddleName] = useState('')
+    // const [mothersMaidenName, setmothersMaidenName] = useState('')
+    const [mothersNin, setmothersNin] = useState('')
+    const [guardianSurname, setguardianSurname] = useState('')
+    const [guardianFirstName, setguardianFirstname] = useState('')
+    const [guardianMiddleName, setguardianMiddlename] = useState('')
+    const [guardianNin, setguardianNin] = useState('')
+    const handleTitle = ({target}) =>{
+      setTitle(target.value)
+    }
+    const handleFirstName = ({target}) =>{
+      setfirstName(target.value)
+    }
+    const handleLastName = ({target}) =>{
+      setlastName(target.value)
+    }
+    const handleMarriedWoman = ({target}) =>{
+      setMarriedWoman(target.value)
+    }
+    const handleMaidenName = ({target}) =>{
+      setmaidenName(target.value)
+    }
+    const handleNameChange = ({target}) =>{
+      setnameChange(target.value)
+    }
+    const handlePreviousSurname = ({target}) =>{
+      setpreviousSurname(target.value)
+    }
+    const handlePreviousFirstName = ({target}) =>{
+      setpreviousFirstName(target.value)
+    }
+    const handlePreviousMiddleName = ({target}) =>{
+      setpreviousMiddleName(target.value)
+    }
+    const handleHomeless = ({target}) =>{
+      setHomeless(target.value)
+    }
+    const handleCityOfResidence = ({target}) =>{
+      setcityOfResidence(target.value)
+    }
+    const handleCountryOfResidence = ({target}) =>{
+      setcountryOfResidence(target.value)
+    }
+    const handleStateOfResidence = ({target}) =>{
+      setstateOfResidence(target.value)
+    }
+    const handleLgaOfResidence = ({target}) =>{
+      setLgaOfResidence(target.value)
+    }
+    const handleAddressOfResidence = ({target}) =>{
+      setAddressOfResidence(target.value)
+    }
+    const handlePostalCode = ({target}) =>{
+      setPostalCode(target.value)
+    }
+    const handleDateOfBirth = ({target}) =>{
+      setdateOfBirth(target.value)
+    }
+    const handleBirthVerification = ({target}) =>{
+      setbirthVerification(target.value)
+    }
+    const handleBirthCountry = ({target}) =>{
+      setbirthCountry(target.value)
+    }
+    const handleBirthState = ({target}) =>{
+      setbirthState(target.value)
+    }
+    const handleBirthLga = ({target}) =>{
+      setbirthLga(target.value)
+    }
+    const handleOriginCountry = ({target}) =>{
+      setoriginCountry(target.value)
+    }
+    const handleOriginState = ({target}) =>{
+      setoriginState(target.value)
+    }
+    const handleOriginLga = ({target}) =>{
+      setoriginLga(target.value)
+    }
+    const handleOriginTown = ({target}) =>{
+      setoriginTown(target.value)
+    }
+    const handleFatherOriginCountry = ({target}) =>{
+      setfatheroriginCountry(target.value)
+    }
+    const handleFatherOriginState = ({target}) =>{
+      setfatheroriginState(target.value)
+    }
+    const handleFatherOriginLga = ({target}) =>{
+      setfatheroriginLga(target.value)
+    }
+    const handleFatherOriginTown = ({target}) =>{
+      setfatheroriginTown(target.value)
+    }
+    const handleMotherOriginCountry = ({target}) =>{
+      setmotheroriginCountry(target.value)
+    }
+    const handleMotherOriginState = ({target}) =>{
+      setmotheroriginState(target.value)
+    }
+    const handleMotherOriginLga = ({target}) =>{
+      setmotheroriginLga(target.value)
+    }
+    const handleMotherOriginTown = ({target}) =>{
+      setmotheroriginTown(target.value)
+    }
+    const handleGender = ({target}) =>{
+      setGender(target.value)
+    }
+    const handleHeight = ({target}) =>{
+      setHeight(target.value)
+    }
+    const handleResidenceStatus = ({target}) =>{
+      setResidenceStatus(target.value)
+    }
+    const handleNationality = ({target}) =>{
+      setNationality(target.value)
+    }
+    const handleSupportingDocuments = ({target}) =>{
+      setsupportingDocuments(target.value)
+    }
+    const handleDocumentNumber = ({target}) =>{
+      setdocumentNumber(target.value)
+    }
+    const handleDocumentExpiryDate = ({target}) =>{
+      setdocumentExpiryDate(target.value)
+    }
+    const handleMaritalStatus = ({target}) =>{
+      setmaritalStatus(target.value)
+    }
+    const handleNativeLanguage = ({target}) =>{
+      setNativeLanguage(target.value)
+    }
+    const handleLanguagesRead = ({target}) =>{
+      setlanguagesYouReadAndWrite(target.value)
+    }
+    const handleOtherLanguages = ({target}) =>{
+      setotherLanguagesSpoken(target.value)
+    }
+    const handleEducationLevel = ({target}) =>{
+      seteducationLevel(target.value)
+    }
+    const handleReligion = ({target}) =>{
+      setReligion(target.value)
+    }
+    const handleTelephone = ({target}) =>{
+      setTelephone(target.value)
+    }
+    const handleEmploymentStatus = ({target}) =>{
+      setEmploymentStatus(target.value)
+    }
+    const handleEmailAddress = ({target}) =>{
+      setEmailAddress(target.value)
+    }
+    const handleOccupation = ({target}) =>{
+      setOccupation(target.value)
+    }
+    const handleFathersSurname = ({target}) =>{
+      setfathersSurname(target.value)
+    }
+    const handleFathersFirstName = ({target}) =>{
+      setfathersFirstName(target.value)
+    }
+    const handleFathersMiddleName = ({target}) =>{
+      setfathersMiddleName(target.value)
+    }
+    const handleFathersNin = ({target}) =>{
+      setfathersNin(target.value)
+    }
+    const handleMothersSurname = ({target}) =>{
+      setmothersSurname(target.value)
+    }
+    const handleMothersFirstName = ({target}) =>{
+      setmothersFirstName(target.value)
+    }
+    const handleMothersMiddleName = ({target}) =>{
+      setmothersMiddleName(target.value)
+    }
+    // const handleMothersMaidenName = ({target}) =>{
+    //   setmothersMaidenName(target.value)
     // }
+    const handleMothersNin = ({target}) =>{
+      setmothersNin(target.value)
+    }
+    const handleGuardianSurname = ({target}) =>{
+      setguardianSurname(target.value)
+    }
+    const handleGuardianFirstname = ({target}) =>{
+      setguardianFirstname(target.value)
+    }
+    const handleGuardianMiddlename = ({target}) =>{
+      setguardianMiddlename(target.value)
+    }
+    const handleGuardianNin = ({target}) =>{
+      setguardianNin(target.value)
+    }
     
+    const enrolmentForm = {
+      title: title,
+      firstName: firstName,
+      lastName: lastName,
+      maidenName: maidenName,
+      changedName: nameChange,
+      previousSurname: previousSurname,
+      previousFirstName: previousFirstName,
+      previousMiddleName: previousMiddleName,
+      homeless: homeless,
+      cityOfResidence: cityOfResidence,
+      countryOfResidence: countryOfResidence,
+      stateOfResidence: stateOfResidence,
+      lgaOfResidence: lgaOfResidence,
+      addressOfResidence: addressOfResidence,
+      postalCode: postalCode,
+      dateOfBirth: dateOfBirth,
+      birthVerification: birthVerification,
+      birthCountry: birthCountry,
+      birthState: birthState,
+      birthLga: birthLga,
+      originatingCountry: originCountry,
+      originatingState: originState,
+      originatingLga: originLga,
+      originatingTown: originTown,
+      fatherOriginatingCountry: fatheroriginCountry,
+      fatherOriginatingState: fatheroriginState,
+      fatherOriginatingLga: fatheroriginLga,
+      fatherOriginatingTown: fatheroriginTown,
+      motherOriginatingCountry: motheroriginCountry,
+      motherOriginatingState: motheroriginState,
+      motherOriginatingLga: motheroriginLga,
+      motherOriginatingTown: motheroriginTown,
+      gender: gender,
+      height: height,
+      residenceStatus: residenceStatus,
+      nationality: nationality,
+      maritalStatus: maritalStatus,
+      mainNativeLanguageSpoken: nativeLanguage,
+      languagesYouReadAndWrite: languagesYouReadAndWrite,
+      otherLanguagesSpoken: otherLanguagesSpoken,
+      educationLevel: educationLevel,
+      religion: religion,
+      telephone: telephone,
+      employmentStatus: employmentStatus,
+      emailAddress: emailAddress,
+      occupation: occupation,
+      fathersSurname: fathersSurname,
+      fathersFirstName: fathersFirstName,
+      fathersMiddleName: fathersMiddleName,
+      fathersNin: fathersNin,
+      mothersSurname: mothersSurname,
+      mothersFirstName: mothersFirstName,
+      mothersMiddleName: mothersMiddleName,
+      mothersNin: mothersNin,
+      guardianSurname: guardianSurname,
+      guardianFirstname: guardianFirstName,
+      guardianMiddlename: guardianMiddleName,
+      guardianNin: guardianNin
+    }
+    
+    if(supportingDocuments === 'anyIdentityReference'){
+      enrolmentForm.anyIdentityReference = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    } 
+    else if(supportingDocuments === 'immigrationDocument'){
+      enrolmentForm.immigrationDocument = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    }
+    else if(supportingDocuments === 'nationalInsurance'){
+      enrolmentForm.nationalInsurance = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    }
+    else if(supportingDocuments === 'nigeriaDriverLicense'){
+      enrolmentForm.nigeriaDriverLicense = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    }
+    else if(supportingDocuments === 'nigerianPassport'){
+      enrolmentForm.nigerianPassport = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    }
+    else if(supportingDocuments === 'otherDesignatedDocument'){
+      enrolmentForm.otherDesignatedDocument = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    }
+    else if(supportingDocuments === 'otherNationalIdentityCard'){
+      enrolmentForm.otherNationalIdentityCard = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    }
+    else if(supportingDocuments === 'otherPassport'){
+      enrolmentForm.otherPassport = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    }
+    else if(supportingDocuments === 'otherTravelDocument'){
+      enrolmentForm.otherTravelDocument = {
+        documentNumber : supportingDocumentNumber,
+        expiryDate: documentExpiryDate
+      }
+    }
+       
+    console.log(enrolmentForm)
+    const handleSubmit = () =>{
+
+    }
 
     return (
         <>
@@ -16,25 +383,26 @@ function Enrolmentform() {
               <h1 className='form_heading'>NATIONAL IDENTIFICATION NUMBER ENROLMENT FORM</h1>
               <p className="instructions">PLEASE FILL THE FORM APPROPRIATELY</p>
 
-              <form action="" method='POST' className="enrolment_form col s12">
+              <form onSubmit={handleSubmit} method='POST' className="enrolment_form col s12">
+                  {/* WHAT ARE YOUR NAMES? */}
                   <div className="names_block_A block row">
                       <h3 className="block_heading">WHAT ARE YOUR NAMES?</h3>
-                      <div className="input-field">
+                      <div className="input-field col s12">
                         <label htmlFor="title">TITLE (Mr/Mrs/Master/Miss/Ms): </label>
-                        <input id='title' type="text" required/>
+                        <input onChange={handleTitle} id='title' type="text" required/>
                       </div>
                     
                       <div className="input-field col s6">
                         <label htmlFor="lastname">LAST NAME: </label>
-                        <input id='lastname' type="text" className='validate' />
+                        <input onChange={handleLastName} id='lastname' type="text"/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="firstname">FIRST NAME: </label>
-                        <input id='firstname' type="text" required/>
+                        <input onChange={handleFirstName} id='firstname' type="text" required/>
                       </div>
                       
-                      <div className="input-field col s12">
+                      {/* <div className="input-field col s12">
                         <label htmlFor="middlename">MIDDLE NAME: </label>
                         <input id='middlename' type="text" required/>
                       </div>
@@ -42,101 +410,131 @@ function Enrolmentform() {
                       <div className="input-field col s12">
                         <label htmlFor="othername">OTHER NAMES: </label>
                         <input id='othername' type="text" required/>
+                      </div> */}
+
+
+                      <div className='input-field col s12' onChange={handleMarriedWoman} value={marriedWoman}>
+                        <p>ARE YOU A MARRIED WOMAN?</p>
+                        <p>
+                          <label htmlFor='true'>
+                            <input id='true' value='true' name="group1" type="radio"/>
+                            <span>Yes</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label htmlFor='false'>
+                            <input id='false' value='false' name="group1" type="radio" />
+                            <span>No</span>
+                          </label>
+                        </p>
                       </div>
-                      
-                      <div className="input-field col s12">
-                        <label htmlFor="maidenname">MAIDEN NAME: </label>
-                        <input id='maidenname' type="text" required/>
-                      </div>
+
+                      {marriedWoman === 'true' ? 
+                        <div className="input-field col s12">
+                          <label htmlFor="maidenname">MAIDEN NAME: </label>
+                          <input onChange={handleMaidenName} id='maidenname' type="text" required/>
+                        </div> : null}
                   </div>
 
-                  {/* <div onChange={changednameHandler}>
-                    <label htmlFor="changename">HAVE YOU CHANGED YOUR NAME BEFORE?</label>
-                    <p>
-                      <label>
-                        <input type="radio" value='Yes' name='changename'/>
-                        <span>Yes</span>
-                      </label>
-                    </p>
-                    <p>
-                      <label>
-                          <input type="radio" value='No' name='changename'/>
-                          <span>No</span>
-                      </label>
-                    </p>
-                  </div> */}
-                  {/* <div onChange={changednameHandler}>
-                  <label htmlFor="changename">HAVE YOU CHANGED YOUR NAME BEFORE?</label>
-                    <select defaultValue='' className='browser-default' name="dobverification" id="">
-                        <option disabled value=' '> </option>
-                        <option value="verified">Verified</option>
-                        <option value="approximate">Approximate</option>
-                        <option value="declared">Declared</option>
-                    </select>
-                  </div> */}
-
+                  {/* HAVE YOU CHANGED YOUR NAME BEFORE */}
                   <div className="names_block_B block row">
-                    <h3 className="block_heading">HAVE YOU CHANGED YOUR NAME BEFORE?</h3>
+                    <div className='input-field col s12' onChange={handleNameChange} value={nameChange}>
+                      <p>HAVE YOU CHANGED YOUR NAME BEFORE?</p>
+                      <p>
+                        <label htmlFor='namechangetrue'>
+                          <input id='namechangetrue' value='Yes' name="namechange" type="radio"/>
+                          <span>Yes</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label htmlFor='namechangefalse'>
+                          <input id='namechangefalse' value='No' name="namechange" type="radio" />
+                          <span>No</span>
+                        </label>
+                      </p>
+                    </div>
+                    {nameChange === 'Yes' ? 
+                    <div>
                       <div className="input-field col s12">
                         <label htmlFor="prevsurname">PREVIOUS SURNAME:</label>
-                        <input id='prevsurname' type="text" required/>
+                        <input id='prevsurname' onChange={handlePreviousSurname} type="text" required/>
                       </div>
-                    
+                  
                       <div className="input-field col s12">
                         <label htmlFor="prevfirstname">PREVIOUS FIRST NAME:</label>
-                        <input id='prevfirstname' type="text"/>
-                      </div>
-                      
-                      <div className="input-field col s12">
-                        <label htmlFor="prevmidname">PREVIOUS MIDDLE NAME: </label>
-                        <input id='prevmidname' type="text" required/>
-                      </div>
-                  </div>
-
-                  <div className="names_block_B block row">
-                      <h3 className="block_heading">WHERE DO YOU LIVE?</h3>
-                      <div className="input-field col s6">
-                        <label htmlFor="cityresidence">CITY OF RESIDENCE:</label>
-                        <input id='cityresidence' type="text" required/>
+                        <input id='prevfirstname' onChange={handlePreviousFirstName} type="text"/>
                       </div>
                     
-                      <div className="input-field col s6">
-                        <label htmlFor="countryresidence">COUNTRY OF RESIDENCE:</label>
-                        <input id='countryresidence' type="text"/>
-                      </div>
-                      
-                      <div className="input-field col s6">
-                        <label htmlFor="stateresidence">STATE OF RESIDENCE: </label>
-                        <input id='stateresidence' type="text" required/>
-                      </div>
-
-                      <div className="input-field col s6">
-                        <label htmlFor="lgaresidence">LGA OF RESIDENCE: </label>
-                        <input id='lgaresidence' type="text" required/>
-                      </div>
-
-                      <div className="input-field col s6">
-                        <label htmlFor="residenceaddress">ADDRESS OF RESIDENCE: </label>
-                        <input id='residenceaddress' type="text" required/>
-                      </div>
-                      
-                      <div className="input-field col s6">
-                        <label htmlFor="postalcode">POSTAL CODE: </label>
-                        <input id='postalcode' type="text" required/>
-                      </div>
+                      <div className="input-field col s12">
+                        <label htmlFor="prevmidname">PREVIOUS MIDDLE NAME: </label>
+                        <input id='prevmidname' onChange={handlePreviousMiddleName} type="text" required/>
+                      </div> 
+                    </div> : null}
                   </div>
 
+                  {/* WHERE DO YOU LIVE */}
+                  <div className="names_block_B block row">
+                      <div className='input-field col s12' onChange={handleHomeless} value={homeless}>
+                        <p>ARE YOU HOMELESS?</p>
+                        <p>
+                          <label htmlFor='homelesstrue'>
+                            <input id='homelesstrue' value='Yes' name="homeless" type="radio"/>
+                            <span>Yes</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label htmlFor='homelessfalse'>
+                            <input id='homelessfalse' value='No' name="homeless" type="radio" />
+                            <span>No</span>
+                          </label>
+                        </p>
+                      </div>
+                      {homeless === 'No' ?
+                        <div>
+                          <div className="input-field col s6">
+                            <label htmlFor="cityresidence">CITY OF RESIDENCE:</label>
+                            <input id='cityresidence' onChange={handleCityOfResidence} type="text" required/>
+                          </div>
+                        
+                          <div className="input-field col s6">
+                            <label htmlFor="countryresidence">COUNTRY OF RESIDENCE:</label>
+                            <input id='countryresidence' onChange={handleCountryOfResidence} type="text"/>
+                          </div>
+                          
+                          <div className="input-field col s6">
+                            <label htmlFor="stateresidence">STATE OF RESIDENCE: </label>
+                            <input id='stateresidence' onChange={handleStateOfResidence} type="text" required/>
+                          </div>
+
+                          <div className="input-field col s6">
+                            <label htmlFor="lgaresidence">LGA OF RESIDENCE: </label>
+                            <input id='lgaresidence' onChange={handleLgaOfResidence} type="text" required/>
+                          </div>
+
+                          <div className="input-field col s6">
+                            <label htmlFor="residenceaddress">ADDRESS OF RESIDENCE: </label>
+                            <input id='residenceaddress' onChange={handleAddressOfResidence} type="text" required/>
+                          </div>
+                          
+                          <div className="input-field col s6">
+                            <label htmlFor="postalcode">POSTAL CODE: </label>
+                            <input id='postalcode' onChange={handlePostalCode} type="number" validate required/>
+                          </div>
+                        </div> : null}
+                  </div>
+
+                  {/* WHEN AND WHERE WERE YOU BORN? */}
                   <div className="names_block_B block row">
                       <h3 className="block_heading">WHEN AND WHERE WERE YOU BORN?</h3>
                       <div className="input-field col s6">
                         <label htmlFor="dateofbirth">DATE OF BIRTH:</label>
-                        <input id='dateofbirth' type='date' required/>
+                        <input id='dateofbirth' onChange={handleDateOfBirth} type='date' required/>
                       </div>
                     
                       <div className="input-field col s6">
                         <label htmlFor="dobverification">DATE OF BIRTH VERIFICATION:</label>
-                        <select defaultValue=' ' className='browser-default' id="dobverification">
-                            <option disabled value=' '> </option>
+                        <select value={birthVerification} onChange={handleBirthVerification} className='browser-default' id="dobverification">
+                            <option disabled defaultValue=' '> </option>
                             <option value="verified">Verified</option>
                             <option value="approximate">Approximate</option>
                             <option value="declared">Declared</option>
@@ -145,124 +543,140 @@ function Enrolmentform() {
                       
                       <div className="input-field col s12">
                         <label htmlFor="pobcountry">PLACE OF BIRTH - COUNTRY:</label>
-                        <input id='pobcountry' type="text" required/>
+                        <input id='pobcountry' onChange={handleBirthCountry} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="pobstate">PLACE OF BIRTH - STATE:</label>
-                        <input id='pobstate' type="text" required/>
+                        <input id='pobstate' onChange={handleBirthState} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="poblocalgovt">PLACE OF BIRTH - LGA:</label>
-                        <input id='poblocalgovt' type="text" required/>
+                        <input id='poblocalgovt' onChange={handleBirthLga} type="text" required/>
                       </div>
                   </div>
 
+                  {/* WHERE ARE YOU FROM? */}
                   <div className="names_block_B block row">
                       <h3 className="block_heading">WHERE ARE YOU FROM?</h3>
                       <div className="input-field col s12">
                         <label htmlFor="origincountry">PLACE OF ORIGIN - COUNTRY:</label>
-                        <input id='origincountry' type='text' required/>
+                        <input id='origincountry' onChange={handleOriginCountry} type='text' required/>
                       </div>
                       
                       <div className="input-field col s12">
                         <label htmlFor="originstate">PLACE OF ORIGIN - STATE:</label>
-                        <input id='originstate' type="text" required/>
+                        <input id='originstate' onChange={handleOriginState} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="originlocalgovt">PLACE OF ORIGIN - LGA:</label>
-                        <input id='originlocalgovt' type="text" required/>
+                        <input id='originlocalgovt' onChange={handleOriginLga} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="origintown">PLACE OF ORIGIN - TOWN:</label>
-                        <input id='origintown' type="text" required/>
+                        <input id='origintown' onChange={handleOriginTown} type="text" required/>
                       </div>
                   </div>
 
+                  {/* WHERE IS YOUR FATHER FROM */}
                   <div className="names_block_B block row">
                       <h3 className="block_heading">WHERE IS YOUR FATHER FROM?</h3>
                       <div className="input-field col s12">
                         <label htmlFor="origincountry">PLACE OF ORIGIN - COUNTRY:</label>
-                        <input id='origincountry' type='text' required/>
+                        <input id='origincountry' onChange={handleFatherOriginCountry} type='text' required/>
                       </div>
                       
                       <div className="input-field col s12">
                         <label htmlFor="originstate">PLACE OF ORIGIN - STATE:</label>
-                        <input id='originstate' type="text" required/>
+                        <input id='originstate' onChange={handleFatherOriginState} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="originlocalgovt">PLACE OF ORIGIN - LGA:</label>
-                        <input id='originlocalgovt' type="text" required/>
+                        <input id='originlocalgovt' onChange={handleFatherOriginLga} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="origintown">PLACE OF ORIGIN - TOWN:</label>
-                        <input id='origintown' type="text" required/>
+                        <input id='origintown' onChange={handleFatherOriginTown} type="text" required/>
                       </div>
                   </div>
 
+                  {/* WHERE IS OUR MOTHER FROM? */}
                   <div className="names_block_B block row">
                       <h3 className="block_heading">WHERE IS YOUR MOTHER FROM?</h3>
                       <div className="input-field col s12">
                         <label htmlFor="origincountry">PLACE OF ORIGIN - COUNTRY:</label>
-                        <input id='origincountry' type='text' required/>
+                        <input id='origincountry' onChange={handleMotherOriginCountry} type='text' required/>
                       </div>
                       
                       <div className="input-field col s12">
                         <label htmlFor="originstate">PLACE OF ORIGIN - STATE:</label>
-                        <input id='originstate' type="text" required/>
+                        <input id='originstate' onChange={handleMotherOriginState} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="originlocalgovt">PLACE OF ORIGIN - LGA:</label>
-                        <input id='originlocalgovt' type="text" required/>
+                        <input id='originlocalgovt' onChange={handleMotherOriginLga} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="origintown">PLACE OF ORIGIN - TOWN:</label>
-                        <input id='origintown' type="text" required/>
+                        <input id='origintown' onChange={handleMotherOriginTown} type="text" required/>
                       </div>
                   </div>
 
+                  {/* YOUR PHYSICAL FEATURES */}
                   <div className="names_block_B block row">
                       <h3 className="block_heading">YOUR PHYSICAL FEATURES</h3>
-                      <div className="input-field col s6">
-                        <label htmlFor="gender">GENDER:(M/F)</label>
-                        <input id='gender' type='text' required/>
+                      <div className='input-field col s12' onChange={handleGender} value={gender}>
+                        <p>GENDER</p>
+                        <p>
+                          <label htmlFor='malegender'>
+                            <input id='malegender' value='Male' name="gender" type="radio"/>
+                            <span>Male</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label htmlFor='femalegender'>
+                            <input id='femalegender' value='Female' name="gender" type="radio" />
+                            <span>Female</span>
+                          </label>
+                        </p>
                       </div>
 
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="height">HEIGHT(CM):</label>
-                        <input id='height' type="text" required/>
+                        <input id='height' onChange={handleHeight} type="number" required/>
                       </div>
 
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="residencestatus">RESIDENCE STATUS:</label>
-                        <select defaultValue=' ' className='browser-default' id="residencestatus">
-                            <option disabled value=' '> </option>
+                        <select value={residenceStatus} onChange={handleResidenceStatus} className='browser-default' id="residencestatus">
+                            <option disabled defaultValue=' '> </option>
                             <option value="birth">Birth</option>
-                            <option value="naturalization">naturalization</option>
-                            <option value="registration">registration</option>
+                            <option value="naturalization">Naturalization</option>
+                            <option value="registration">Registration</option>
                         </select>
                       </div>
 
-                      <div className="input-field col s6">
-                        <label htmlFor="nationality">Nationality:</label>
-                        <input id='nationality' type="text" required/>
+                      <div className="input-field col s12">
+                        <label htmlFor="nationality">NATIONALITY:</label>
+                        <input id='nationality' onChange={handleNationality} type="text" required/>
                       </div>
                   </div>
 
+                  {/* YOUR SUPPORTING DOCUMENTS */}
                   <div className="names_block_B block row">
                       <h3 className="block_heading">YOUR SUPPORTING DOCUMENTS:</h3>
 
                       <div className="input-field col s12">
                         <label htmlFor="documents">DOCUMENTS:</label>
-                        <select defaultValue=' ' className='browser-default' id="documents">
-                            <option disabled value=' '> </option>
+                        <select value={supportingDocuments} onChange={handleSupportingDocuments} className='browser-default' id="documents">
+                            <option disabled defaultValue=' '> </option>
                             <option value="anyIdentityReference">Any identity reference</option>
                             <option value="immigrationDocument">Immigration Document</option>
                             <option value="nationalInsurance">National Insurance</option>
@@ -277,12 +691,12 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="documentNumber">DOCUMENT NUMBER</label>
-                        <input id='documentNumber' type="number" required/>
+                        <input id='documentNumber' onChange={handleDocumentNumber} type="number" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="documentExpiryDate">DOCUMENT EXPIRY DATE:</label>
-                        <input id='documentExpiryDate' type="date" required/>
+                        <input id='documentExpiryDate' onChange={handleDocumentExpiryDate} type="date" required/>
                       </div>
                   </div>
                   
@@ -292,8 +706,8 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="maritalStatus">MARITAL STATUS:</label>
-                        <select defaultValue=' ' className='browser-default' id="maritalStatus">
-                            <option disabled value=' '> </option>
+                        <select value={maritalStatus} onChange={handleMaritalStatus} className='browser-default' id="maritalStatus">
+                            <option defaultValue=' '> </option>
                             <option value="divorced">Divorced</option>
                             <option value="married">Married</option>
                             <option value="separated">Separated</option>
@@ -302,25 +716,25 @@ function Enrolmentform() {
                         </select>
                       </div>
 
-                      <div className="input-field col s6">
-                        <label htmlFor="mainNativeLanguageSpoken">MAIN NATIVE LANGUAGE SPOKEN:</label>
-                        <input id='mainNativeLanguageSpoken' type="text" required/>
+                      <div className="input-field col s12">
+                        <label htmlFor="mainNativeLanguageSpoken">NATIVE LANGUAGE SPOKEN:</label>
+                        <input onChange={handleNativeLanguage} id='mainNativeLanguageSpoken' type="text" required/>
                       </div>
 
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="languagesYouReadAndWrite">LANGUAGE YOU READ AND WRITE:</label>
-                        <input id='languagesYouReadAndWrite' type="text" required/>
+                        <input onChange={handleLanguagesRead} id='languagesYouReadAndWrite' type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="otherLanguagesSpoken">OTHER LANGUAGE SPOKEN:</label>
-                        <input id='otherLanguagesSpoken' type="text" required/>
+                        <input onChange={handleOtherLanguages} id='otherLanguagesSpoken' type="text" required/>
                       </div>
 
                       <div className="input-field col s6">
                         <label htmlFor="educationLevel">EDUCATION LEVEL:</label>
-                        <select defaultValue=' ' className='browser-default' id="educationLevel">
-                            <option disabled value=' '> </option>
+                        <select value={educationLevel} onChange={handleEducationLevel} className='browser-default' id="educationLevel">
+                            <option defaultValue=' '> </option>
                             <option value="certification">Certification</option>
                             <option value="none">None</option>
                             <option value="postgraduate">Postgraduate</option>
@@ -332,8 +746,8 @@ function Enrolmentform() {
 
                       <div className="input-field col s6">
                         <label htmlFor="religion">RELIGION:</label>
-                        <select defaultValue=' ' className='browser-default' id="religion">
-                            <option disabled value=' '> </option>
+                        <select value={religion} onChange={handleReligion} className='browser-default' id="religion">
+                            <option defaultValue=' '> </option>
                             <option value="christainity">Christainity</option>
                             <option value="islam">Islam</option>
                             <option value="traditional">Traditional</option>
@@ -342,14 +756,19 @@ function Enrolmentform() {
                       </div>
 
                       <div className="input-field col s12">
+                        <label htmlFor="occupation">OCCUPATION/PROFESSION:</label>
+                        <input onChange={handleOccupation} id='occupation' type="text" required/>
+                      </div>
+
+                      <div className="input-field col s12">
                         <label htmlFor="telephone">TELEPHONE:</label>
-                        <input id='telephone' type="tel" required/>
+                        <input onChange={handleTelephone} id='telephone' type="tel" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="employmentStatus">EMPLOYMENT STATUS:</label>
-                        <select defaultValue=' ' className='browser-default' id="employmentStatus">
-                            <option disabled value=' '> </option>
+                        <select value={employmentStatus} onChange={handleEmploymentStatus} className='browser-default' id="employmentStatus">
+                            <option defaultValue=' '> </option>
                             <option value="employed">Employed</option>
                             <option value="unemployed">Unemployed</option>
                             <option value="pensioner">Pensioner</option>
@@ -359,7 +778,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="emailAddress">EMAIL ADDRESS:</label>
-                        <input id='emailAddress' type="email" required/>
+                        <input id='emailAddress' onChange={handleEmailAddress} type="email" required/>
                       </div>
                   </div>
 
@@ -368,71 +787,71 @@ function Enrolmentform() {
                       <h3 className="block_heading">DETAILS OF YOUR PARENTS</h3>
                       <div className="input-field col s6">
                         <label htmlFor="fathersSurname">FATHER'S SURNAME:</label>
-                        <input id='fathersSurname' type='text' required/>
+                        <input id='fathersSurname' onChange={handleFathersSurname} type='text' required/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="fathersFirstName">FATHER'S FIRST NAME:</label>
-                        <input id='fathersFirstName' type="text" required/>
+                        <input id='fathersFirstName' onChange={handleFathersFirstName} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="fathersMiddleName">FATHER'S MIDDLE NAME:</label>
-                        <input id='fathersMiddleName' type="text" required/>
+                        <input id='fathersMiddleName' onChange={handleFathersMiddleName} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="fathersNin">FATHER'S NIN(if available):</label>
-                        <input id='fathersNin' type="number" required/>
-                      </div>
-
-                      <div className="input-field col s6">
-                        <label htmlFor="mothersSurname">MOTHER'S SURNAME:</label>
-                        <input id='mothersSurname' type='text' required/>
-                      </div>
-                      
-                      <div className="input-field col s6">
-                        <label htmlFor="mothersFirstName">MOTHER'S FIRST NAME:</label>
-                        <input id='mothersFirstName' type="text" required/>
-                      </div>
-
-                      <div className="input-field col s6">
-                        <label htmlFor="mothersMiddleName">MOTHER'S MIDDLE NAME:</label>
-                        <input id='mothersMiddleName' type="text" required/>
-                      </div>
-
-                      <div className="input-field col s6">
-                        <label htmlFor="mothersMaidenName">MOTHER'S MAIDEN NAME:</label>
-                        <input id='mothersMaidenName' type="text" required/>
+                        <input id='fathersNin' onChange={handleFathersNin} type="number" required/>
                       </div>
 
                       <div className="input-field col s12">
+                        <label htmlFor="mothersSurname">MOTHER'S SURNAME:</label>
+                        <input id='mothersSurname' onChange={handleMothersSurname} type='text' required/>
+                      </div>
+                      
+                      <div className="input-field col s12">
+                        <label htmlFor="mothersFirstName">MOTHER'S FIRST NAME:</label>
+                        <input id='mothersFirstName' onChange={handleMothersFirstName} type="text" required/>
+                      </div>
+
+                      <div className="input-field col s12">
+                        <label htmlFor="mothersMiddleName">MOTHER'S MIDDLE NAME:</label>
+                        <input id='mothersMiddleName' onChange={handleMothersMiddleName} type="text" required/>
+                      </div>
+
+                      {/* <div className="input-field col s6">
+                        <label htmlFor="mothersMaidenName">MOTHER'S MAIDEN NAME:</label>
+                        <input id='mothersMaidenName' onChange={handleMothersMaidenName} type="text" required/>
+                      </div> */}
+
+                      <div className="input-field col s12">
                         <label htmlFor="mothersNin">MOTHER'S NIN(if available):</label>
-                        <input id='mothersNin' type="number" required/>
+                        <input id='mothersNin' onChange={handleMothersNin} type="number" required/>
                       </div>
                   </div>
 
                   {/* GUARDIAN DETAILS */}
                   <div className="names_block_N block row">
                       <h3 className="block_heading">GUARDIAN DETAILS</h3>
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="guardianSurname">SURNAME:</label>
-                        <input id='guardianSurname' type='text' required/>
+                        <input id='guardianSurname' onChange={handleGuardianSurname} type='text' required/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="guardianFirstName">FIRST NAME:</label>
-                        <input id='guardianFirstName' type="text" required/>
+                        <input id='guardianFirstName' onChange={handleGuardianFirstname} type="text" required/>
                       </div>
 
                       <div className="input-field col s6">
                         <label htmlFor="guardianMiddleName">MIDDLE NAME:</label>
-                        <input id='guardianMiddleName' type="text" required/>
+                        <input id='guardianMiddleName' onChange={handleGuardianMiddlename} type="text" required/>
                       </div>
 
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="guardianNin">NATIONAL IDENTIFICATION NUMBER:</label>
-                        <input id='guardianNin' type="number" required/>
+                        <input id='guardianNin' onChange={handleGuardianNin} type="number" required/>
                       </div>
                   </div>
 
