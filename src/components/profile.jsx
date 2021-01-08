@@ -14,7 +14,7 @@ function Profile({data}) {
     // let name = sessionStorage.getItem('__browser_name')
     // let email = sessionStorage.getItem('__browser_email')
     // let phone = sessionStorage.getItem('__browser_phone')
-    const [formcount, setformcount] = useState(0)
+    const [formcount] = useState(0)
     const styles = {
         margin: '10px',
 

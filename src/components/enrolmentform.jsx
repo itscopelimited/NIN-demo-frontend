@@ -65,6 +65,23 @@ function Enrolmentform() {
     const [guardianFirstName, setguardianFirstname] = useState('')
     const [guardianMiddleName, setguardianMiddlename] = useState('')
     const [guardianNin, setguardianNin] = useState('')
+    const [nextOfKinSurname, setnextOfKinSurname] = useState('')
+    const [nextOfKinFirstname, setnextOfKinFirstname] = useState('')
+    const [nextOfKinMiddlename, setnextOfKinMiddlename] = useState('')
+    const [nextOfKinRelationship, setnextOfKinRelationship] = useState('')
+    const [nextOfKinCountry, setnextOfKinCountry] = useState('')
+    const [nextOfKinState, setnextOfKinState] = useState('')
+    const [nextOfKinLga, setnextOfKinLga] = useState('')
+    const [nextOfKinTown, setnextOfKinTown] = useState('')
+    const [nextOfKinStreetAddress, setnextOfKinStreetAddress] = useState('')
+    const [nextOfKinNin, setnextOfKinNin] = useState('')
+    
+    // APPOINTMENT STATES
+    const [appointmentYear, setAppointmentyear] = useState('')
+    const [appointmentMonth, setAppointmentMonth] = useState('')
+    const [appointmentDay, setAppointmentDay] = useState('')
+    const [appointmentBranch, setAppointmentBranch] = useState('')
+    
     const handleTitle = ({target}) =>{
       setTitle(target.value)
     }
@@ -254,7 +271,59 @@ function Enrolmentform() {
     const handleGuardianNin = ({target}) =>{
       setguardianNin(target.value)
     }
+    const handleNextOfKinSurname = ({target}) =>{
+      setnextOfKinSurname(target.value)
+    }
+    const handleNextOfKinFirstname = ({target}) =>{
+      setnextOfKinFirstname(target.value)
+    }
+    const handleNextOfKinMiddlename = ({target}) =>{
+      setnextOfKinMiddlename(target.value)
+    }
+    const handleNextOfKinRelationship = ({target}) =>{
+      setnextOfKinRelationship(target.value)
+    }
+    const handleNextOfKinCountry = ({target}) =>{
+      setnextOfKinCountry(target.value)
+    }
+    const handleNextOfKinState = ({target}) =>{
+      setnextOfKinState(target.value)
+    }
+    const handleNextOfKinLga = ({target}) =>{
+      setnextOfKinLga(target.value)
+    }
+    const handleNextOfKinTown = ({target}) =>{
+      setnextOfKinTown(target.value)
+    }
+    const handleNextOfKinStreetAddress = ({target}) =>{
+      setnextOfKinStreetAddress(target.value)
+    }
+    const handleNextOfKinNin = ({target}) =>{
+      setnextOfKinNin(target.value)
+    }
     
+    // HANDLER FUNCTIONS FOR BOOKING
+    const handleAppointmentYear = ({target}) =>{
+      setAppointmentyear(target.value)
+    }
+    const handleAppointmentMonth = ({target}) =>{
+      setAppointmentMonth(target.value)
+    }
+    const handleAppointmentDay = ({target}) =>{
+      setAppointmentDay(target.value)
+    }
+    const handleAppointmentBranch = ({target}) =>{
+      setAppointmentBranch(target.value)
+    }
+
+    const bookingData = {
+      year: appointmentYear,
+      month: appointmentMonth,
+      date: appointmentDay,
+      branch: appointmentBranch
+    }
+
+
     const enrolmentForm = {
       title: title,
       firstName: firstName,
@@ -313,7 +382,17 @@ function Enrolmentform() {
       guardianSurname: guardianSurname,
       guardianFirstname: guardianFirstName,
       guardianMiddlename: guardianMiddleName,
-      guardianNin: guardianNin
+      guardianNin: guardianNin,
+      nextOfKinSurname: nextOfKinSurname,
+      nextOfKinFirstname: nextOfKinFirstname,
+      nextOfKinMiddlename: nextOfKinMiddlename,
+      nextOfKinRelationship: nextOfKinRelationship,
+      nextOfKinCountry: nextOfKinCountry,
+      nextOfKinState: nextOfKinState,
+      nextOfKinTown: nextOfKinTown,
+      nextOfKinLga: nextOfKinLga,
+      nextOfKinStreetAddress: nextOfKinStreetAddress,
+      nextOfKinNin: nextOfKinNin
     }
     
     if(supportingDocuments === 'anyIdentityReference'){
@@ -858,69 +937,69 @@ function Enrolmentform() {
                   {/* NEXT OF KIN DETAILS */}
                   <div className="names_block_N block row">
                       <h3 className="block_heading">YOUR NEXT OF KIN DETAILS</h3>
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="nextOfKinSurname">SURNAME OF NEXT OF KIN:</label>
-                        <input id='nextOfKinSurname' type='text' required/>
+                        <input id='nextOfKinSurname' onChange={handleNextOfKinSurname} type='text' required/>
                       </div>
                       
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="nextOfKinFirstName">FIRST NAME OF NEXT OF KIN:</label>
-                        <input id='nextOfKinFirstName' type="text" required/>
+                        <input id='nextOfKinFirstName' onChange={handleNextOfKinFirstname} type="text" required/>
                       </div>
 
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="nextOfKinMiddleName">MIDDLE NAME OF NEXT OF KIN:</label>
-                        <input id='nextOfKinMiddleName' type="text" required/>
+                        <input id='nextOfKinMiddleName' onChange={handleNextOfKinMiddlename} type="text" required/>
                       </div>
 
-                      <div className="input-field col s6">
-                        <label htmlFor="nextOfKinRelatonship">RELATIONSHIP WITH OF NEXT OF KIN:</label>
-                        <input id='nextOfKinRelatonship' type="text" required/>
+                      <div className="input-field col s12">
+                        <label htmlFor="nextOfKinRelationship">RELATIONSHIP WITH OF NEXT OF KIN:</label>
+                        <input id='nextOfKinRelationship' onChange={handleNextOfKinRelationship} type="text" required/>
                       </div>
                   </div>
 
                   {/* ADDRESS OF NEXT OF KIN */}
                   <div className="names_block_N block row">
                       <h3 className="block_heading">ADDRESS OF YOUR NEXT OF KIN</h3>
-                      <div className="input-field col s6">
+                      <div className="input-field col s12">
                         <label htmlFor="nextOfKinCountry">COUNTRY OF RESIDENCE:</label>
-                        <input id='nextOfKinCountry' type='text' required/>
+                        <input id='nextOfKinCountry' onChange={handleNextOfKinCountry} type='text' required/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="nextOfKinState">STATE OF RESIDENCE:</label>
-                        <input id='nextOfKinState' type="text" required/>
+                        <input id='nextOfKinState' onChange={handleNextOfKinState} type="text" required/>
                       </div>
 
                       <div className="input-field col s6">
                         <label htmlFor="nextOfKinLga">LGA OF RESIDENCE:</label>
-                        <input id='nextOfKinLga' type="text" required/>
-                      </div>
-
-                      <div className="input-field col s6">
-                        <label htmlFor="nextOfKinTown">TOWN/CITY OF RESIDENCE:</label>
-                        <input id='nextOfKinTown' type="text" required/>
-                      </div>
-
-                      <div className="input-field col s6">
-                        <label htmlFor="nextOfKinStreet">STREET ADDRESS:</label>
-                        <input id='nextOfKinStreet' type="text" required/>
-                      </div>
-
-                      <div className="input-field col s6">
-                        <label htmlFor="nextOfKinPostalCode">POSTAL CODE:</label>
-                        <input id='nextOfKinPostalCode' type="number" required/>
+                        <input id='nextOfKinLga' onChange={handleNextOfKinLga} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
+                        <label htmlFor="nextOfKinTown">TOWN/CITY OF RESIDENCE:</label>
+                        <input id='nextOfKinTown' onChange={handleNextOfKinTown} type="text" required/>
+                      </div>
+
+                      <div className="input-field col s12">
+                        <label htmlFor="nextOfKinStreet">STREET ADDRESS:</label>
+                        <input id='nextOfKinStreet' onChange={handleNextOfKinStreetAddress} type="text" required/>
+                      </div>
+
+                      {/* <div className="input-field col s6">
+                        <label htmlFor="nextOfKinPostalCode">POSTAL CODE:</label>
+                        <input id='nextOfKinPostalCode' type="number" required/>
+                      </div> */}
+
+                      <div className="input-field col s12">
                         <label htmlFor="nextOfKinNin">NEXT OF KIN'S NIN:</label>
-                        <input id='nextOfKinNin' type="number" required/>
+                        <input id='nextOfKinNin' onChange={handleNextOfKinNin} type="number" required/>
                       </div>
                   </div>
 
                   {/* Booking Details */}
                   <div className="names_block_N block row">
-                      <h3 className="block_heading">BOOK APPOINTMENT FOR COLLECTION OF NIN SLIP</h3>
+                      <h3 className="block_heading">BOOK APPOINTMENT FOR NIN SLIP COLLECTION</h3>
                       {/* "month": "Jan",
                       "year": 2021,
                       "date": 6,
@@ -928,13 +1007,13 @@ function Enrolmentform() {
                       "time": "8:30am" */}
                       <div className="input-field col s12">
                         <label htmlFor="year">Year</label>
-                        <input id='year' value='2021' type="text"/>
+                        <input id='year' onChange={handleAppointmentYear} value='2021' type="text"/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="month">MONTH:</label>
-                        <select defaultValue='' id="month" className='browser-default'>
-                          <option disabled value=''> </option>
+                        <select value={appointmentMonth} onChange={handleAppointmentMonth} id="month" className='browser-default'>
+                          <option defaultValue=''> </option>
                           <option value="Jan">Jan</option>
                           <option value="Feb">Feb</option>
                           <option value="Mar">March</option>
@@ -952,8 +1031,8 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="day">DAY</label>
-                        <select defaultValue='' id="day" className='browser-default'>
-                          <option disabled > </option>
+                        <select value={appointmentDay} onChange={handleAppointmentDay} id="day" className='browser-default'>
+                          <option defaultValue='' > </option>
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -990,8 +1069,8 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="location">BRANCH</label>
-                        <select defaultValue='' id="location" className='browser-default'>
-                          <option disabled > </option>
+                        <select value={appointmentBranch} onChange={handleAppointmentBranch} id="location" className='browser-default'>
+                          <option defaultValue=''> </option>
                           <option value="lekki">Lekki Phase 1</option>
                           <option value="Ajah">Ajah</option>
                           <option value="Victoria Island">Victoria Island</option>
