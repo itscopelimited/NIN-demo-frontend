@@ -51,13 +51,18 @@ function Login() {
             console.log(data)
             
             if(data.errors.password){
-                alert(`${data.errors.password}`)
+                alert(data.errors.password)
                 setLoading(false)
             }
+            else if(data.errors.key){
+                alert(data.errors.key)
+                window.location = '/#/create'
+            }
             else if(data.status === 401){
-                alert(`${data.message}`)
+                alert(data.message)
                 setLoading(false)
-            }else{
+            }
+            else{
                 setLoginResponse(data)
                 sessionStorage.setItem('__browser_data', `${data.data.token}`)
             }
@@ -99,6 +104,7 @@ function Login() {
                     
                 </form> 
                 {loading === true ? <Spinner/> : null}
+            
                 <p className='existing_login'>
                     Don't have an account? &nbsp;  
                     <Link to='/create'>

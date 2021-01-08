@@ -38,8 +38,9 @@ function Verify({data}) {
         .then((response) => response.json() )
         .then((data) => {
             console.log(data)
+            alert(data.message)
             //setStatusCode(data.status)
-            window.location='/login'
+            window.location='/#/login'
         })
         .catch((err) => console.log(err));
     }
@@ -47,15 +48,15 @@ function Verify({data}) {
         return (
             <>
                 <div className='home-container'>
-                    <div className='container z-depth-4'>
+                    <div className=' z-depth-4'>
                         <img src={NIMClogo} alt="NIMC Logo" className='nimc'/> 
                         <p style={{color:'green', margin: '20px 0 0 0'}}>{data.message}!</p>
                         <form onSubmit={handleSubmit} action="" method='POST'>
-                            <div className="input-field col s12" style={{textAlign:'center', width:'300px'}}>
-                                <label htmlFor="verify">Enter Verification Code: </label>
-                                <input onChange={handleCode} type="text" id='verify' className='validate'/>
+                            <div className="input-field col s12" style={{textAlign:'center', width:'350px', padding:'30px'}}>
+                                <label htmlFor="verify" style={{textAlign:'center'}}>Enter Verification Code: </label>
+                                <input onChange={handleCode} style={{margin:'auto', width:'100px'}} type="text" id='verify' className='validate'/>
                             </div>
-                            <button type='submit' className='create_button'>Submit</button>
+                            <button type='submit' className='btn green' style={{margin:'10px'}}>Submit</button>
                         </form>
                     </div>
                 </div>

@@ -145,6 +145,7 @@ function Createaccount() {
                         </div>
                     </form>  
                     {loading === true ? <Spinner/> : null}
+                    
 
                     <p className='existing_login'>
                         Already have an account? &nbsp;  

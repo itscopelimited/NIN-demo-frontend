@@ -7,7 +7,7 @@ function Profile({data}) {
     useEffect(() => {
         let token = sessionStorage.getItem('__browser_data')
         if(!token){
-            window.location='/login'
+            window.location='/#/login'
         }
         // alert(`${data.message}!`)
     })
@@ -41,17 +41,17 @@ function Profile({data}) {
                             <div className="divider"></div>
                             <div className="section">
                                 <p>NAME</p>
-                                <h5>{data.data.user.firstName} {data.data.user.lastName}</h5>
+                                <p>{data.data.user.firstName} {data.data.user.lastName}</p>
                             </div>
                             <div className="divider"></div>
                             <div className="section">
                                 <p>EMAIL</p>
-                                <h5>{data.data.user.email}</h5>
+                                <p>{data.data.user.email}</p>
                             </div>
                             <div className="divider"></div>
                             <div className="section">
                                 <p>FORM COUNT</p>
-                                <h5>{formCounter()}</h5>
+                                <p>{formCounter()}</p>
                             </div>
                         </div>
                     </div>

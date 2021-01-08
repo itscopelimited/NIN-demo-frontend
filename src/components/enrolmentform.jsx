@@ -314,7 +314,7 @@ function Enrolmentform() {
     useEffect(() => {
       if(!token){
         alert('Session Expired! Login to Access Form.')
-        window.location = '/login'
+        window.location = '/#/login'
       }
     })
     const handleAppointmentMonth = ({target}) =>{
@@ -381,7 +381,7 @@ function Enrolmentform() {
             else if(data.status === 401){
               setLoading(false)
               alert('Session Expired! Login to Access Form.')
-              window.location='/login'
+              window.location='/*/login'
             }
           console.log(availableTime)
         })

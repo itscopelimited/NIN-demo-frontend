@@ -93,6 +93,7 @@ label{
   position: absolute;
   left: 50%;
   top: 50%;
+  bottom: 0;
 }
 @media(min-width:500px) and (max-width:899px){
   
