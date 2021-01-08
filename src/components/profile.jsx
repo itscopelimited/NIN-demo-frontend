@@ -32,7 +32,7 @@ function Profile({data}) {
             <div className="home-container">
                 <div className="container z-depth-4">
                     <img src={NIMClogo} alt="NIMC Logo" className='nimc'/>
-                    <h5>User Profile</h5>  
+                    <p>User Profile</p>  
                     {/* <p>{data.data.user.firstName} {data.data.user.lastName}</p>
                     <p>{data.data.user.email}</p>
                     <p>{data.data.user.phone}</p> */}
