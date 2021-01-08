@@ -1,9 +1,11 @@
 import React,{useState} from 'react'
 import NIMClogo from './img/nimc.png'
+import Spinner from './spinner'
 
 function Verify({data}) {
     const [phone] = useState(data.data.phone);
     const [code, setCode] = useState();
+    const [loading, setLoading] = useState(false);
     // const [statusCode, setStatusCode] = useState(400)
     // const [verifyResponse, setVerifyResponse] = useState('');
 
@@ -25,6 +27,7 @@ function Verify({data}) {
             return false;
         }
         
+        setLoading(true)
         await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/verify/account",
             {
                 headers: {
@@ -56,6 +59,7 @@ function Verify({data}) {
                                 <label htmlFor="verify" style={{textAlign:'center'}}>Enter Verification Code: </label>
                                 <input onChange={handleCode} style={{margin:'auto', width:'100px'}} type="text" id='verify' className='validate'/>
                             </div>
+                            {loading === true ? <Spinner/> : null}
                             <button type='submit' className='btn green' style={{margin:'10px'}}>Submit</button>
                         </form>
                     </div>
