@@ -7,7 +7,7 @@ import Createaccount from './components/createaccount';
 import Login from './components/login'
 import Enrolmentform from './components/enrolmentform'
 import Verify from './components/verify'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import Profile from './components/profile';
 import Home from './components/home';
 
