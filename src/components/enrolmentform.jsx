@@ -76,6 +76,7 @@ function Enrolmentform() {
     const [nextOfKinTown, setnextOfKinTown] = useState("")
     const [nextOfKinStreetAddress, setnextOfKinStreetAddress] = useState("")
     const [nextOfKinNin, setnextOfKinNin] = useState("")
+    const [declaration, setDeclaration] = useState("")
     
     // APPOINTMENT STATES
     const [appointmentYear] = useState(2021)
@@ -83,9 +84,9 @@ function Enrolmentform() {
     const [appointmentDay, setAppointmentDay] = useState("")
     const [appointmentBranch, setAppointmentBranch] = useState("")
     const [loading, setLoading] = useState(false)
-    // const [defaultTime] = useState('')
-    // const [pickedTimes] = useState('')
-    const [availableTime, setavailableTime] = useState("")
+    const [defaultTime, setdefaultTime] = useState()
+    const [pickedTime, setpickedTime] = useState()
+    const [availableTime, setavailableTime] = useState()
     const [timeResponse, setTimeResponse] = useState("")
     const [selectedTime, setSelectedTime] = useState("")
 
@@ -308,6 +309,9 @@ function Enrolmentform() {
     const handleNextOfKinNin = ({target}) =>{
       setnextOfKinNin(target.value)
     }
+    const handleDeclaration = ({target}) =>{
+      setDeclaration(target.value)
+    }
     
     // HANDLER FUNCTIONS FOR BOOKING
     let token = sessionStorage.getItem('__browser_data')
@@ -375,6 +379,8 @@ function Enrolmentform() {
           console.log(data)
             if(data.status === 200){
               setLoading(false)
+              setpickedTime(data.data.pickedTimes)
+              setdefaultTime(data.data.defaultTime)
               setavailableTime(data.data.availableTime)
               setTimeResponse(data)
             }
@@ -384,10 +390,12 @@ function Enrolmentform() {
             }
             else if(data.status === 401){
               setLoading(false)
-              alert('Session Expired! Login to Access Form.')
+              alert(data.message)
               window.location='/*/login'
             }
-          console.log(availableTime)
+          console.log(data.data.availableTime)
+          console.log(data.data.pickedTimes)
+          console.log(data.data.defaultTime)
         })
         .catch((err) => console.log(err));
       }
@@ -527,19 +535,10 @@ function Enrolmentform() {
     console.log(enrolmentForm)
     const handleSubmit = async(e) =>{
       e.preventDefault();
-      // if(appointmentYear === '' || appointmentYear > 2021){
-      //   alert('Please Enter a Valid Year!')
-      //   return false
-      // }
-      // else if(appointmentMonth === ''){
-      //   alert('Please Enter a Valid Month')
-      // }
-      // else if(appointmentDay === '' || appointmentDay > 31){
-      //   alert('Please Enter a Valid Day')
-      // }
-      // else if(appointmentBranch === ''){
-      //   alert('Branch Field is Empty')
-      // }
+      if(declaration === ''){
+        alert('Please Accept Declaration/Attestation!')
+        return false
+      }
       // else{
         setLoading("submit")
         await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/create/nin",
@@ -579,8 +578,6 @@ function Enrolmentform() {
               setLoading(false)
               alert(data.errors.title)
             }
-            
-          console.log(availableTime)
         })
         .catch((err) => console.log(err));
       //}
@@ -1135,6 +1132,7 @@ function Enrolmentform() {
                   {/* Booking Details */}
                   <div className="names_block_N block row">
                       <h3 className="block_heading">BOOK APPOINTMENT FOR NIN SLIP COLLECTION</h3>
+                      <p style={{textAlign:'center', fontWeight:'bold'}} className='red-text'>Pay extra attention to month and day chosen, once picked, it cannot be changed!</p>
                       {/* "month": "Jan",
                       "year": 2021,
                       "date": 6,
@@ -1210,18 +1208,28 @@ function Enrolmentform() {
                         </select>
                       </div>
 
-                      {availableTime ?
+                      {defaultTime ?
                           <div className='input-field col s12'>
                             <p>SELECT TIME:</p>
                             <select id="time" value={selectedTime} onChange={handleSelectedTime} className='browser-default'>
                               <option defaultValue=''></option>
-                              {availableTime ?
-                                availableTime.map(time => 
-                                    <option key={time} value={time}>{time}</option>
-                                ) : null}
+                              {
+                                defaultTime.map((time) =>{
+                                  let t = pickedTime.find(timeResponse => timeResponse === time)
+                                  if(t === undefined){
+                                      t = ''
+                                  }
+                                  if(time === t){
+                                    return (<option key={time} value={time} disabled>{time}</option>)
+                                  } else{
+                                    return (<option key={time} value={time} >{time}</option>)
+                                  }
+                                }) 
+                              }
                             </select> 
                           </div> : null
                       }
+                      
                       
                       {!timeResponse ?  
                             <button onClick={handleAppointmentBooking} className='btn green' style={{display:'block', margin:'20px auto'}}>
@@ -1238,8 +1246,8 @@ function Enrolmentform() {
                   {/* DECLARATION/ATTESTATION */}
                   <div className="names_block_N block row">
                       <h3 className="block_heading">DECLARATION/ATTESTATION</h3>
-                      <label>
-                        <input type="radio"/>
+                      <label htmlFor='declaration'>
+                        <input id='declaration' type="radio" value='agreed' onChange={handleDeclaration} required/>
                         <span>I certify that the information provided by me on this form is complete, true and accurate. I understand that the information provided by me on this form
                           and my biometrics shall constitute my personal information/data to be entered into the National Identity Database. I consent to sharing of my data
                           provided herein with any organization permitted by the NIMC Act 23 of 2007 and within the Nigerian Law. I hereby apply for a National Identification
