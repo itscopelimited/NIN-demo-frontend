@@ -559,7 +559,7 @@ function Enrolmentform() {
           console.log(data)
             if(data.status === 201){
               setLoading(false)
-              alert(`${data.message}, you Will Be Reminded a Day To Your Appointment Date`)
+              alert(`${data.message} You Will Be Reminded a Day To Your Appointment Date`)
             }
             // else if(data.status === 401){
             //   // alert('Session Expired! Login to Access Form.')
@@ -582,13 +582,7 @@ function Enrolmentform() {
             
           console.log(availableTime)
         })
-        .catch((err) => {
-          console.log(err)
-          if(err === 'TypeError: Failed to fetch'){
-            alert('Network Error')
-            setLoading(false)
-          }
-        });
+        .catch((err) => console.log(err));
       //}
     }
 
