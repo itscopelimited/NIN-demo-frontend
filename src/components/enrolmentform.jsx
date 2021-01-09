@@ -86,7 +86,7 @@ function Enrolmentform() {
     const [loading, setLoading] = useState(false)
     const [defaultTime, setdefaultTime] = useState()
     const [pickedTime, setpickedTime] = useState()
-    const [availableTime, setavailableTime] = useState()
+    // const [availableTime, setavailableTime] = useState()
     const [timeResponse, setTimeResponse] = useState("")
     const [selectedTime, setSelectedTime] = useState("")
 
@@ -381,7 +381,7 @@ function Enrolmentform() {
               setLoading(false)
               setpickedTime(data.data.pickedTimes)
               setdefaultTime(data.data.defaultTime)
-              setavailableTime(data.data.availableTime)
+              // setavailableTime(data.data.availableTime)
               setTimeResponse(data)
             }
             else if(data.errors.date){
