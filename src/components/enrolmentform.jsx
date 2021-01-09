@@ -3,91 +3,91 @@ import NIMClogo from './img/nimc.png'
 import Spinner from './spinner'
 
 function Enrolmentform() {
-    const [title, setTitle] = useState('')
-    const [firstName, setfirstName] = useState('')
-    const [lastName, setlastName] = useState('')
-    const [marriedWoman, setMarriedWoman] = useState('')
-    const [maidenName, setmaidenName] = useState('')
-    const [nameChange, setnameChange] = useState('')
-    const [previousSurname, setpreviousSurname] = useState('')
-    const [previousFirstName, setpreviousFirstName] = useState('')
-    const [previousMiddleName, setpreviousMiddleName] = useState('')
-    const [homeless, setHomeless] = useState('')
-    const [cityOfResidence, setcityOfResidence] = useState('')
-    const [countryOfResidence, setcountryOfResidence] = useState('')
-    const [stateOfResidence, setstateOfResidence] = useState('')
-    const [lgaOfResidence, setLgaOfResidence] = useState('')
-    const [addressOfResidence, setAddressOfResidence] = useState('')
-    const [postalCode, setPostalCode] = useState('')
-    const [dateOfBirth, setdateOfBirth] = useState('')
-    const [birthVerification, setbirthVerification] = useState('')
-    const [birthCountry, setbirthCountry] = useState('')
-    const [birthLga, setbirthLga] = useState('')
-    const [birthState, setbirthState] = useState('')
-    const [originCountry, setoriginCountry] = useState('')
-    const [originState, setoriginState] = useState('')
-    const [originLga, setoriginLga] = useState('')
-    const [originTown, setoriginTown] = useState('')
-    const [fatheroriginCountry, setfatheroriginCountry] = useState('')
-    const [fatheroriginState, setfatheroriginState] = useState('')
-    const [fatheroriginLga, setfatheroriginLga] = useState('')
-    const [fatheroriginTown, setfatheroriginTown] = useState('')
-    const [motheroriginCountry, setmotheroriginCountry] = useState('')
-    const [motheroriginState, setmotheroriginState] = useState('')
-    const [motheroriginLga, setmotheroriginLga] = useState('')
-    const [motheroriginTown, setmotheroriginTown] = useState('')
-    const [gender, setGender] = useState('')
-    const [height, setHeight] = useState('')
-    const [residenceStatus, setResidenceStatus] = useState('')
-    const [nationality, setNationality] = useState('')
-    const [supportingDocuments, setsupportingDocuments] = useState('')
-    const [supportingDocumentNumber, setdocumentNumber] = useState(null)
-    const [documentExpiryDate, setdocumentExpiryDate] = useState(null)
-    const [maritalStatus, setmaritalStatus] = useState('')
-    const [nativeLanguage, setNativeLanguage] = useState('')
-    const [languagesYouReadAndWrite, setlanguagesYouReadAndWrite] = useState('')
-    const [otherLanguagesSpoken, setotherLanguagesSpoken] = useState('')
-    const [educationLevel, seteducationLevel] = useState('')
-    const [religion, setReligion] = useState('')
-    const [telephone, setTelephone] = useState('')
-    const [employmentStatus, setEmploymentStatus] = useState('')
-    const [emailAddress, setEmailAddress] = useState('')
-    const [occupation, setOccupation] = useState('')
-    const [fathersSurname, setfathersSurname] = useState('')
-    const [fathersFirstName, setfathersFirstName] = useState('')
-    const [fathersMiddleName, setfathersMiddleName] = useState('')
-    const [fathersNin, setfathersNin] = useState('')
-    const [mothersSurname, setmothersSurname] = useState('')
-    const [mothersFirstName, setmothersFirstName] = useState('')
-    const [mothersMiddleName, setmothersMiddleName] = useState('')
+    const [title, setTitle] = useState("")
+    const [firstName, setfirstName] = useState("")
+    const [lastName, setlastName] = useState("")
+    // const [marriedWoman, setMarriedWoman] = useState("")
+    const [maidenName, setmaidenName] = useState("")
+    const [nameChange, setnameChange] = useState("")
+    const [previousSurname, setpreviousSurname] = useState("")
+    const [previousFirstName, setpreviousFirstName] = useState("")
+    const [previousMiddleName, setpreviousMiddleName] = useState("")
+    const [homeless, setHomeless] = useState("")
+    const [cityOfResidence, setcityOfResidence] = useState("")
+    const [countryOfResidence, setcountryOfResidence] = useState("")
+    const [stateOfResidence, setstateOfResidence] = useState("")
+    const [lgaOfResidence, setLgaOfResidence] = useState("")
+    const [addressOfResidence, setAddressOfResidence] = useState("")
+    const [postalCode, setPostalCode] = useState("")
+    const [dateOfBirth, setdateOfBirth] = useState("")
+    const [birthVerification, setbirthVerification] = useState("")
+    const [birthCountry, setbirthCountry] = useState("")
+    const [birthLga, setbirthLga] = useState("")
+    const [birthState, setbirthState] = useState("")
+    const [originCountry, setoriginCountry] = useState("")
+    const [originState, setoriginState] = useState("")
+    const [originLga, setoriginLga] = useState("")
+    const [originTown, setoriginTown] = useState("")
+    const [fatheroriginCountry, setfatheroriginCountry] = useState("")
+    const [fatheroriginState, setfatheroriginState] = useState("")
+    const [fatheroriginLga, setfatheroriginLga] = useState("")
+    const [fatheroriginTown, setfatheroriginTown] = useState("")
+    const [motheroriginCountry, setmotheroriginCountry] = useState("")
+    const [motheroriginState, setmotheroriginState] = useState("")
+    const [motheroriginLga, setmotheroriginLga] = useState("")
+    const [motheroriginTown, setmotheroriginTown] = useState("")
+    const [gender, setGender] = useState("")
+    const [height, setHeight] = useState("")
+    const [residenceStatus, setResidenceStatus] = useState("")
+    const [nationality, setNationality] = useState("")
+    const [supportingDocuments, setsupportingDocuments] = useState("")
+    const [supportingDocumentNumber, setdocumentNumber] = useState("")
+    const [documentExpiryDate, setdocumentExpiryDate] = useState("")
+    const [maritalStatus, setmaritalStatus] = useState("")
+    const [nativeLanguage, setNativeLanguage] = useState("")
+    const [languagesYouReadAndWrite, setlanguagesYouReadAndWrite] = useState("")
+    const [otherLanguagesSpoken, setotherLanguagesSpoken] = useState("")
+    const [educationLevel, seteducationLevel] = useState("")
+    const [religion, setReligion] = useState("")
+    const [telephone, setTelephone] = useState("")
+    const [employmentStatus, setEmploymentStatus] = useState("")
+    const [emailAddress, setEmailAddress] = useState("")
+    const [occupation, setOccupation] = useState("")
+    const [fathersSurname, setfathersSurname] = useState("")
+    const [fathersFirstName, setfathersFirstName] = useState("")
+    const [fathersMiddleName, setfathersMiddleName] = useState("")
+    const [fathersNin, setfathersNin] = useState("")
+    const [mothersSurname, setmothersSurname] = useState("")
+    const [mothersFirstName, setmothersFirstName] = useState("")
+    const [mothersMiddleName, setmothersMiddleName] = useState("")
     // const [mothersMaidenName, setmothersMaidenName] = useState('')
-    const [mothersNin, setmothersNin] = useState('')
-    const [guardianSurname, setguardianSurname] = useState('')
-    const [guardianFirstName, setguardianFirstname] = useState('')
-    const [guardianMiddleName, setguardianMiddlename] = useState('')
-    const [guardianNin, setguardianNin] = useState('')
-    const [nextOfKinSurname, setnextOfKinSurname] = useState('')
-    const [nextOfKinFirstname, setnextOfKinFirstname] = useState('')
-    const [nextOfKinMiddlename, setnextOfKinMiddlename] = useState('')
-    const [nextOfKinRelationship, setnextOfKinRelationship] = useState('')
-    const [nextOfKinCountry, setnextOfKinCountry] = useState('')
-    const [nextOfKinState, setnextOfKinState] = useState('')
-    const [nextOfKinLga, setnextOfKinLga] = useState('')
-    const [nextOfKinTown, setnextOfKinTown] = useState('')
-    const [nextOfKinStreetAddress, setnextOfKinStreetAddress] = useState('')
-    const [nextOfKinNin, setnextOfKinNin] = useState('')
+    const [mothersNin, setmothersNin] = useState("")
+    const [guardianSurname, setguardianSurname] = useState("")
+    const [guardianFirstName, setguardianFirstname] = useState("")
+    const [guardianMiddleName, setguardianMiddlename] = useState("")
+    const [guardianNin, setguardianNin] = useState("")
+    const [nextOfKinSurname, setnextOfKinSurname] = useState("")
+    const [nextOfKinFirstname, setnextOfKinFirstname] = useState("")
+    const [nextOfKinMiddlename, setnextOfKinMiddlename] = useState("")
+    const [nextOfKinRelationship, setnextOfKinRelationship] = useState("")
+    const [nextOfKinCountry, setnextOfKinCountry] = useState("")
+    const [nextOfKinState, setnextOfKinState] = useState("")
+    const [nextOfKinLga, setnextOfKinLga] = useState("")
+    const [nextOfKinTown, setnextOfKinTown] = useState("")
+    const [nextOfKinStreetAddress, setnextOfKinStreetAddress] = useState("")
+    const [nextOfKinNin, setnextOfKinNin] = useState("")
     
     // APPOINTMENT STATES
     const [appointmentYear] = useState(2021)
-    const [appointmentMonth, setAppointmentMonth] = useState('')
-    const [appointmentDay, setAppointmentDay] = useState()
-    const [appointmentBranch, setAppointmentBranch] = useState('')
+    const [appointmentMonth, setAppointmentMonth] = useState("")
+    const [appointmentDay, setAppointmentDay] = useState("")
+    const [appointmentBranch, setAppointmentBranch] = useState("")
     const [loading, setLoading] = useState(false)
     // const [defaultTime] = useState('')
     // const [pickedTimes] = useState('')
-    const [availableTime, setavailableTime] = useState('')
-    const [timeResponse, setTimeResponse] = useState('')
-    const [selectedTime, setSelectedTime] = useState('')
+    const [availableTime, setavailableTime] = useState("")
+    const [timeResponse, setTimeResponse] = useState("")
+    const [selectedTime, setSelectedTime] = useState("")
 
     const handleTitle = ({target}) =>{
       setTitle(target.value)
@@ -98,9 +98,9 @@ function Enrolmentform() {
     const handleLastName = ({target}) =>{
       setlastName(target.value)
     }
-    const handleMarriedWoman = ({target}) =>{
-      setMarriedWoman(target.value)
-    }
+    // const handleMarriedWoman = ({target}) =>{
+    //   setMarriedWoman(target.value)
+    // }
     const handleMaidenName = ({target}) =>{
       setmaidenName(target.value)
     }
@@ -557,9 +557,9 @@ function Enrolmentform() {
         .then((response) => response.json() )
         .then((data) => {
           console.log(data)
-            if(data.status === 200){
+            if(data.status === 201){
               setLoading(false)
-              alert(data.message)
+              alert(`${data.message}, you Will Be Reminded a Day To Your Appointment Date`)
             }
             // else if(data.status === 401){
             //   // alert('Session Expired! Login to Access Form.')
@@ -568,8 +568,12 @@ function Enrolmentform() {
             // else if(data.status === 400){
             //   setLoading(false)
             // }
+            // else if(data.errors.profile){
+            //   alert(data.errors.profile, data.errors.message)
+            // }
             else if(data.errors){
-              alert(data.errors)
+              setLoading(false)
+              alert(data.message)
             }
             else if(data.errors.title){
               setLoading(false)
@@ -625,7 +629,7 @@ function Enrolmentform() {
                       </div> */}
 
 
-                      <div className='input-field col s12' onChange={handleMarriedWoman} value={marriedWoman}>
+                      {/* <div className='input-field col s12' onChange={handleMarriedWoman} value={marriedWoman}>
                         <p>ARE YOU A MARRIED WOMAN?</p>
                         <p>
                           <label htmlFor='true'>
@@ -645,7 +649,11 @@ function Enrolmentform() {
                         <div className="input-field col s12">
                           <label htmlFor="maidenname">MAIDEN NAME: </label>
                           <input onChange={handleMaidenName} id='maidenname' type="text" required/>
-                        </div> : null}
+                        </div> : null} */}
+                      <div className="input-field col s12">
+                          <label htmlFor="maidenname">MAIDEN NAME: </label>
+                          <input onChange={handleMaidenName} id='maidenname' type="text" required/>
+                      </div>
                   </div>
 
                   {/* HAVE YOU CHANGED YOUR NAME BEFORE */}
@@ -710,7 +718,7 @@ function Enrolmentform() {
                         
                           <div className="input-field col s6">
                             <label htmlFor="countryresidence">COUNTRY OF RESIDENCE:</label>
-                            <input id='countryresidence' onChange={handleCountryOfResidence} type="text"/>
+                            <input id='countryresidence' onChange={handleCountryOfResidence} type="text" required/>
                           </div>
                           
                           <div className="input-field col s6">
@@ -730,7 +738,7 @@ function Enrolmentform() {
                           
                           <div className="input-field col s6">
                             <label htmlFor="postalcode">POSTAL CODE: </label>
-                            <input id='postalcode' onChange={handlePostalCode} type="number" validate required/>
+                            <input id='postalcode' onChange={handlePostalCode} type="number" required/>
                           </div>
                         </div> : null}
                   </div>
@@ -1048,17 +1056,17 @@ function Enrolmentform() {
                       <h3 className="block_heading">GUARDIAN DETAILS</h3>
                       <div className="input-field col s12">
                         <label htmlFor="guardianSurname">SURNAME:</label>
-                        <input id='guardianSurname' onChange={handleGuardianSurname} type='text' />
+                        <input id='guardianSurname' onChange={handleGuardianSurname} type='text' required/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="guardianFirstName">FIRST NAME:</label>
-                        <input id='guardianFirstName' onChange={handleGuardianFirstname} type="text" />
+                        <input id='guardianFirstName' onChange={handleGuardianFirstname} type="text" required/>
                       </div>
 
                       <div className="input-field col s6">
                         <label htmlFor="guardianMiddleName">MIDDLE NAME:</label>
-                        <input id='guardianMiddleName' onChange={handleGuardianMiddlename} type="text" />
+                        <input id='guardianMiddleName' onChange={handleGuardianMiddlename} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
@@ -1210,7 +1218,9 @@ function Enrolmentform() {
 
                       {availableTime ?
                           <div className='input-field col s12'>
+                            <p>SELECT TIME:</p>
                             <select id="time" value={selectedTime} onChange={handleSelectedTime} className='browser-default'>
+                              <option defaultValue=''></option>
                               {availableTime ?
                                 availableTime.map(time => 
                                     <option key={time} value={time}>{time}</option>
@@ -1248,6 +1258,7 @@ function Enrolmentform() {
                               SUBMIT
                       </button>
                       {loading === 'submit' ? <Spinner/> : null}
+                      {/* <p style={{textAlign:'center', color: 'green'}}>Login to account</p> */}
                   </div>
               </form>
           </div>  
