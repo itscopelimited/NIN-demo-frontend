@@ -378,6 +378,10 @@ function Enrolmentform() {
               setavailableTime(data.data.availableTime)
               setTimeResponse(data)
             }
+            else if(data.errors.date){
+              setLoading(false)
+              alert(data.errors.date)
+            }
             else if(data.status === 401){
               setLoading(false)
               alert('Session Expired! Login to Access Form.')
@@ -537,23 +541,25 @@ function Enrolmentform() {
       //   alert('Branch Field is Empty')
       // }
       // else{
-        setLoading(true)
+        setLoading("submit")
         await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/create/nin",
             {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",
                     "Access-Control-Allow-Origin": '*',
-                    "myqueu-x-token": `${token}`
+                    "myqueu-x-token": `${token}`,
+                    "Accept": 'application/json'
                 },
                 method: "POST",
                 mode: 'cors',
-                body: JSON.stringify(bookingData)
+                body: JSON.stringify(enrolmentForm)
             })
         .then((response) => response.json() )
         .then((data) => {
           console.log(data)
             if(data.status === 200){
               setLoading(false)
+              alert(data.message)
             }
             // else if(data.status === 401){
             //   // alert('Session Expired! Login to Access Form.')
@@ -562,6 +568,9 @@ function Enrolmentform() {
             // else if(data.status === 400){
             //   setLoading(false)
             // }
+            else if(data.errors){
+              alert(data.errors)
+            }
             else if(data.errors.title){
               setLoading(false)
               alert(data.errors.title)
@@ -569,7 +578,13 @@ function Enrolmentform() {
             
           console.log(availableTime)
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err)
+          if(err === 'TypeError: Failed to fetch'){
+            alert('Network Error')
+            setLoading(false)
+          }
+        });
       //}
     }
 
@@ -724,13 +739,14 @@ function Enrolmentform() {
                   <div className="names_block_B block row">
                       <h3 className="block_heading">WHEN AND WHERE WERE YOU BORN?</h3>
                       <div className="input-field col s12">
-                        <label htmlFor="dateofbirth">DATE OF BIRTH:</label>
+                        <p htmlFor="dateofbirth">DATE OF BIRTH:</p>
                         <input id='dateofbirth' onChange={handleDateOfBirth} type='date' required/>
                       </div>
                     
                       <div className="input-field col s12">
+                        <p>DATE OF BIRTH VERIFICATION</p>
                         <select value={birthVerification} onChange={handleBirthVerification} className='browser-default' id="dobverification">
-                            <option defaultValue='DATE OF BIRTH VERIFICATION'>DATE OF BIRTH VERIFICATION </option>
+                            <option defaultValue=''> </option>
                             <option value="verified">Verified</option>
                             <option value="approximate">Approximate</option>
                             <option value="declared">Declared</option>
@@ -850,9 +866,9 @@ function Enrolmentform() {
                       </div>
 
                       <div className="input-field col s12">
-                        <label htmlFor="residencestatus">RESIDENCE STATUS:</label>
+                        <p>RESIDENCE STATUS</p>
                         <select value={residenceStatus} onChange={handleResidenceStatus} className='browser-default' id="residencestatus">
-                            <option disabled defaultValue=' '> </option>
+                            <option defaultValue=''> </option>
                             <option value="birth">Birth</option>
                             <option value="naturalization">Naturalization</option>
                             <option value="registration">Registration</option>
@@ -870,9 +886,9 @@ function Enrolmentform() {
                       <h3 className="block_heading">YOUR SUPPORTING DOCUMENTS:</h3>
 
                       <div className="input-field col s12">
-                        <label htmlFor="documents">DOCUMENTS:</label>
+                        <p htmlFor="documents">DOCUMENTS:</p>
                         <select value={supportingDocuments} onChange={handleSupportingDocuments} className='browser-default' id="documents">
-                            <option disabled defaultValue=' '> </option>
+                            <option defaultValue=' '> </option>
                             <option value="anyIdentityReference">Any identity reference</option>
                             <option value="immigrationDocument">Immigration Document</option>
                             <option value="nationalInsurance">National Insurance</option>
@@ -891,7 +907,7 @@ function Enrolmentform() {
                       </div>
 
                       <div className="input-field col s12">
-                        <label htmlFor="documentExpiryDate">DOCUMENT EXPIRY DATE:</label>
+                        <p htmlFor="documentExpiryDate">DOCUMENT EXPIRY DATE:</p>
                         <input id='documentExpiryDate' onChange={handleDocumentExpiryDate} type="date" required/>
                       </div>
                   </div>
@@ -901,7 +917,7 @@ function Enrolmentform() {
                       <h3 className="block_heading">YOUR OTHER DETAILS:</h3>
 
                       <div className="input-field col s12">
-                        <label htmlFor="maritalStatus">MARITAL STATUS:</label>
+                        <p htmlFor="maritalStatus">MARITAL STATUS:</p>
                         <select value={maritalStatus} onChange={handleMaritalStatus} className='browser-default' id="maritalStatus">
                             <option defaultValue=' '> </option>
                             <option value="divorced">Divorced</option>
@@ -928,7 +944,7 @@ function Enrolmentform() {
                       </div>
 
                       <div className="input-field col s6">
-                        <label htmlFor="educationLevel">EDUCATION LEVEL:</label>
+                        <p htmlFor="educationLevel">EDUCATION LEVEL:</p>
                         <select value={educationLevel} onChange={handleEducationLevel} className='browser-default' id="educationLevel">
                             <option defaultValue=' '> </option>
                             <option value="certification">Certification</option>
@@ -941,7 +957,7 @@ function Enrolmentform() {
                       </div>
 
                       <div className="input-field col s6">
-                        <label htmlFor="religion">RELIGION:</label>
+                        <p htmlFor="religion">RELIGION:</p>
                         <select value={religion} onChange={handleReligion} className='browser-default' id="religion">
                             <option defaultValue=' '> </option>
                             <option value="christainity">Christainity</option>
@@ -962,7 +978,7 @@ function Enrolmentform() {
                       </div>
 
                       <div className="input-field col s12">
-                        <label htmlFor="employmentStatus">EMPLOYMENT STATUS:</label>
+                        <p htmlFor="employmentStatus">EMPLOYMENT STATUS:</p>
                         <select value={employmentStatus} onChange={handleEmploymentStatus} className='browser-default' id="employmentStatus">
                             <option defaultValue=' '> </option>
                             <option value="employed">Employed</option>
@@ -998,7 +1014,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="fathersNin">FATHER'S NIN(if available):</label>
-                        <input id='fathersNin' onChange={handleFathersNin} type="number" required/>
+                        <input id='fathersNin' onChange={handleFathersNin} type="number" />
                       </div>
 
                       <div className="input-field col s12">
@@ -1023,7 +1039,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="mothersNin">MOTHER'S NIN(if available):</label>
-                        <input id='mothersNin' onChange={handleMothersNin} type="number" required/>
+                        <input id='mothersNin' onChange={handleMothersNin} type="number" />
                       </div>
                   </div>
 
@@ -1032,22 +1048,22 @@ function Enrolmentform() {
                       <h3 className="block_heading">GUARDIAN DETAILS</h3>
                       <div className="input-field col s12">
                         <label htmlFor="guardianSurname">SURNAME:</label>
-                        <input id='guardianSurname' onChange={handleGuardianSurname} type='text' required/>
+                        <input id='guardianSurname' onChange={handleGuardianSurname} type='text' />
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="guardianFirstName">FIRST NAME:</label>
-                        <input id='guardianFirstName' onChange={handleGuardianFirstname} type="text" required/>
+                        <input id='guardianFirstName' onChange={handleGuardianFirstname} type="text" />
                       </div>
 
                       <div className="input-field col s6">
                         <label htmlFor="guardianMiddleName">MIDDLE NAME:</label>
-                        <input id='guardianMiddleName' onChange={handleGuardianMiddlename} type="text" required/>
+                        <input id='guardianMiddleName' onChange={handleGuardianMiddlename} type="text" />
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="guardianNin">NATIONAL IDENTIFICATION NUMBER:</label>
-                        <input id='guardianNin' onChange={handleGuardianNin} type="number" required/>
+                        <input id='guardianNin' onChange={handleGuardianNin} type="number" />
                       </div>
                   </div>
 
@@ -1110,7 +1126,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinNin">NEXT OF KIN'S NIN:</label>
-                        <input id='nextOfKinNin' onChange={handleNextOfKinNin} type="number" required/>
+                        <input id='nextOfKinNin' onChange={handleNextOfKinNin} type="number" />
                       </div>
                   </div>
 
@@ -1123,7 +1139,7 @@ function Enrolmentform() {
                       "branch": "Lekki",
                       "time": "8:30am" */}
                       <div className="input-field col s12">
-                        <label htmlFor="year">Year</label>
+                        <p htmlFor="year">Year</p>
                         <input id='year' defaultValue='2021' type="text"/>
                       </div>
 
@@ -1231,7 +1247,7 @@ function Enrolmentform() {
                       <button type='submit' className='btn green' style={{display:'block', margin:'20px auto'}}>
                               SUBMIT
                       </button>
-                      {loading === true ? <Spinner/> : null}
+                      {loading === 'submit' ? <Spinner/> : null}
                   </div>
               </form>
           </div>  
