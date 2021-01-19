@@ -314,13 +314,13 @@ function Enrolmentform() {
     }
     
     // HANDLER FUNCTIONS FOR BOOKING
-    let token = sessionStorage.getItem('__browser_data')
-    useEffect(() => {
-      if(!token){
-        alert('Session Expired! Login to Access Form.')
-        window.location = '/#/login'
-      }
-    })
+    // let token = sessionStorage.getItem('__browser_data')
+    // useEffect(() => {
+    //   if(!token){
+    //     alert('Session Expired! Login to Access Form.')
+    //     window.location = '/#/login'
+    //   }
+    // })
     const handleAppointmentMonth = ({target}) =>{
       setAppointmentMonth(target.value)
     }
@@ -345,7 +345,7 @@ function Enrolmentform() {
     console.log(bookingData)
 
     
-
+    let token = localStorage.getItem('__browser_data')
     const handleAppointmentBooking = async(e) =>{
       e.preventDefault();
       if(appointmentYear === '' || appointmentYear > 2021){
@@ -393,9 +393,9 @@ function Enrolmentform() {
               alert(data.message)
               window.location='/*/login'
             }
-          console.log(data.data.availableTime)
-          console.log(data.data.pickedTimes)
-          console.log(data.data.defaultTime)
+          // console.log(data.data.availableTime)
+          // console.log(data.data.pickedTimes)
+          // console.log(data.data.defaultTime)
         })
         .catch((err) => console.log(err));
       }
@@ -582,6 +582,14 @@ function Enrolmentform() {
         .catch((err) => console.log(err));
       //}
     }
+
+    useEffect(() => {
+      if(!document.cookie || !token){
+          alert('Session Expired! Login to Access Form.')
+          window.location='/#/login'
+      }
+    })
+
 
     return (
         <>

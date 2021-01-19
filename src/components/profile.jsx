@@ -10,7 +10,7 @@ function Profile({data}) {
             window.location='/#/login'
         }
         // alert(`${data.message}!`)
-    })
+    },[])
     // let name = sessionStorage.getItem('__browser_name')
     // let email = sessionStorage.getItem('__browser_email')
     // let phone = sessionStorage.getItem('__browser_phone')

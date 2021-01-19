@@ -18,6 +18,7 @@ function Createaccount() {
     
     const handleFirstName = ({target}) =>{
         setFirstName(target.value)
+        //sessionStorage.setItem('__name', `${target.value} ${lastName}`)
     }
     const handleLastName = ({target}) =>{
         setLastName(target.value)
@@ -27,6 +28,7 @@ function Createaccount() {
     }
     const handleEmail = ({target}) =>{
         setEmail(target.value)
+        //sessionStorage.setItem('__email', target.value)
     }
     const handlePassword = ({target}) =>{
         setPassword(target.value)

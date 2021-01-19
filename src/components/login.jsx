@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import NIMClogo from './img/nimc.png'
 import {Link} from 'react-router-dom'
-import Profile from './profile'
+//import Profile from './profile'
 import Spinner from './spinner'
 
 function Login() {
@@ -9,14 +9,17 @@ function Login() {
     const [password, setPassword] = useState('')
     const [loginResponse, setLoginResponse] = useState('')
     const [loading, setLoading] = useState(false)
+    const [token, setToken] = useState('')
+    const [cookies, setCookies] = useState('')
+    const [formcount] = useState(0)
 
     const handleUserEmail = ({target}) =>{
         setUserEmail(target.value)
-        sessionStorage.setItem('__browser_user', target.value)
+        localStorage.setItem('__browser_user', target.value)
     }
     const handlePassword = ({target}) =>{
         setPassword(target.value)
-        sessionStorage.setItem('__browser_secret', target.value)
+        localStorage.setItem('__browser_secret', target.value)
     }
 
     const formData = {
@@ -64,24 +67,77 @@ function Login() {
             }
             else{
                 setLoginResponse(data)
-                sessionStorage.setItem('__browser_data', `${data.data.token}`)
+                setToken(data.data.token)
+                localStorage.setItem('__browser_data', `${data.data.token}`)
+                localStorage.setItem('__name', `${data.data.user.firstName} ${data.data.user.lastName}`)
+                let timeToAdd = 1000 * 60 * 60 * 24 * 1;
+                var date = new Date();
+                let expiryTime = parseInt(date.getTime()) + timeToAdd;
+                date.setTime(expiryTime)
+                let utcTime = date.toUTCString();
+                document.cookie = `__browser_data= ${data.data.token}; expires=${utcTime};`
+                setCookies(document.cookie)
+
+                // const currentTime = new Date().getTime();
+                // document.cookie = `__browser_data= ${data.data.token}; expires=${currentTime + (60 * 60 * 24 * 1000 * 1)};`
+                // const TOKEN = browser.cookies.get({
+                //     name: '__browser_data'
+                // })
+                // console.log(TOKEN)
             }
-            
         })
         .catch((err) => console.log(err));
     }
-    // useEffect(() => {
-    //     let user = sessionStorage.getItem('__browser_user')
-    //     let secret = sessionStorage.getItem('__browser_secret')
-    //     if(user && secret){
-    //         return (<Profile data={loginResponse}/>)
-    //     }
-    //     // alert(`${loginResponse.message}!`)
-    // })
 
-    
-    if(loginResponse.status){
-        return <Profile data={loginResponse}/>
+    const formCounter = () =>{
+        return formcount === 0 ? <h5>No Forms Filled!</h5> : formcount
+    }
+
+    const handleLocalData = () =>{
+        localStorage.clear();
+        document.cookie = "__browser_data=; max-age=0";
+        return window.location.reload()
+    }
+
+    const openForm = () =>{
+        window.location = '/#/enrolmentform'
+    }
+
+
+    let email = localStorage.getItem('__browser_user')
+    let name = localStorage.getItem('__name')
+    if(/__browser_data/.test(document.cookie)){
+        return (
+            <div className="home-container">
+                <div className="container z-depth-4">
+                    <img src={NIMClogo} alt="NIMC Logo" className='nimc'/>
+                    <p>User Profile</p>
+                    <div className=" green lighten-3">
+                        <div className="row">
+                            <div className="divider"></div>
+                            <div className="section">
+                                <p>NAME</p>
+                                <p>{name}</p>
+                            </div> 
+                            <div className="divider"></div>
+                            <div className="section">
+                                <p>EMAIL</p>
+                                <p>{email}</p>
+                            </div>
+                            <div className="divider"></div>
+                            <div className="section">
+                                <p>FORM COUNT</p>
+                                <p>{formCounter()}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onClick={openForm} style={{margin:'10px'}} className='btn green white-text'>
+                        Fill Form
+                    </button>
+                    <button onClick={handleLocalData} style={{margin:'10px'}} className='btn red'>Log Out</button>
+                </div>
+            </div>
+        )
     }
     else{
         return (
