@@ -7,10 +7,10 @@ import Spinner from './spinner'
 function Login() {
     const [userEmail, setUserEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [loginResponse, setLoginResponse] = useState('')
+    //const [loginResponse, setLoginResponse] = useState('')
     const [loading, setLoading] = useState(false)
-    const [token, setToken] = useState('')
-    const [cookies, setCookies] = useState('')
+    // const [token, setToken] = useState('')
+    //const [cookies, setCookies] = useState('')
     const [formcount] = useState(0)
 
     const handleUserEmail = ({target}) =>{
@@ -66,8 +66,8 @@ function Login() {
                 setLoading(false)
             }
             else{
-                setLoginResponse(data)
-                setToken(data.data.token)
+                //setLoginResponse(data)
+                //setToken(data.data.token)
                 localStorage.setItem('__browser_data', `${data.data.token}`)
                 localStorage.setItem('__name', `${data.data.user.firstName} ${data.data.user.lastName}`)
                 let timeToAdd = 1000 * 60 * 60 * 24 * 1;
@@ -76,7 +76,7 @@ function Login() {
                 date.setTime(expiryTime)
                 let utcTime = date.toUTCString();
                 document.cookie = `__browser_data= ${data.data.token}; expires=${utcTime};`
-                setCookies(document.cookie)
+                //setCookies(document.cookie)
 
                 // const currentTime = new Date().getTime();
                 // document.cookie = `__browser_data= ${data.data.token}; expires=${currentTime + (60 * 60 * 24 * 1000 * 1)};`
@@ -106,7 +106,9 @@ function Login() {
 
     let email = localStorage.getItem('__browser_user')
     let name = localStorage.getItem('__name')
+    
     if(/__browser_data/.test(document.cookie)){
+    // if(cookies || document.cookie){
         return (
             <div className="home-container">
                 <div className="container z-depth-4">

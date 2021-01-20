@@ -469,12 +469,7 @@ function Enrolmentform() {
       nextOfKinTown: nextOfKinTown,
       nextOfKinLga: nextOfKinLga,
       nextOfKinStreetAddress: nextOfKinStreetAddress,
-      nextOfKinNin: nextOfKinNin,
-      year: appointmentYear ,
-      date: appointmentDay ,
-      month: appointmentMonth,
-      branch: appointmentBranch ,
-      time: selectedTime
+      nextOfKinNin: nextOfKinNin
     }
     
     if(supportingDocuments === 'anyIdentityReference'){
@@ -533,56 +528,94 @@ function Enrolmentform() {
     }
        
     console.log(enrolmentForm)
+
+    //FINAL FORM SUBMISSION
     const handleSubmit = async(e) =>{
       e.preventDefault();
       if(declaration === ''){
         alert('Please Accept Declaration/Attestation!')
         return false
       }
-      // else{
-        setLoading("submit")
-        await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/create/nin",
-            {
-                headers: {
-                    "Content-Type": "application/json; charset=UTF-8",
-                    "Access-Control-Allow-Origin": '*',
-                    "myqueu-x-token": `${token}`,
-                    "Accept": 'application/json'
-                },
-                method: "POST",
-                mode: 'cors',
-                body: JSON.stringify(enrolmentForm)
-            })
-        .then((response) => response.json() )
-        .then((data) => {
-          console.log(data)
-            if(data.status === 201){
-              setLoading(false)
-              alert(`${data.message} You Will Be Reminded a Day To Your Appointment Date`)
-            }
-            // else if(data.status === 401){
-            //   // alert('Session Expired! Login to Access Form.')
-            //   // window.location='/login'
-            // }
-            // else if(data.status === 400){
-            //   setLoading(false)
-            // }
-            // else if(data.errors.profile){
-            //   alert(data.errors.profile, data.errors.message)
-            // }
-            else if(data.errors){
-              setLoading(false)
-              alert(data.message)
-            }
-            else if(data.errors.title){
-              setLoading(false)
-              alert(data.errors.title)
-            }
-        })
-        .catch((err) => console.log(err));
-      //}
+      enrolmentForm.year = appointmentYear
+      enrolmentForm.date = appointmentDay
+      enrolmentForm.month = appointmentMonth
+      enrolmentForm.branch = appointmentBranch
+      enrolmentForm.time = selectedTime
+      setLoading("submit")
+      await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/create/nin",
+          {
+              headers: {
+                  "Content-Type": "application/json; charset=UTF-8",
+                  "Access-Control-Allow-Origin": '*',
+                  "myqueu-x-token": `${token}`,
+                  "Accept": 'application/json'
+              },
+              method: "POST",
+              mode: 'cors',
+              body: JSON.stringify(enrolmentForm)
+          })
+      .then((response) => response.json() )
+      .then((data) => {
+        console.log(data)
+          if(data.status === 201){
+            setLoading(false)
+            alert(`${data.message} You Will Be Reminded a Day To Your Appointment Date`)
+            window.location=`${data.data.paymentUrl}`
+          }
+          // else if(data.status === 401){
+          //   // alert('Session Expired! Login to Access Form.')
+          //   // window.location='/login'
+          // }
+          // else if(data.status === 400){
+          //   setLoading(false)
+          // }
+          // else if(data.errors.profile){
+          //   alert(data.errors.profile, data.errors.message)
+          // }
+          else if(data.errors){
+            setLoading(false)
+            alert(data.message)
+          }
+          else if(data.errors.title){
+            setLoading(false)
+            alert(data.errors.title)
+          }
+      })
+      .catch((err) => console.log(err));
     }
 
+    // const tempFormData = {
+    //   enrolmentForm
+    // }
+
+    //EVERY 10 SECONDS, SAVE FORM VALUES TO DATABASE
+    
+    // console.log(tempFormData)
+    // const interval = setInterval(async() => {
+    //   // await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/create/temp-nin",
+    //   //   {
+    //   //       headers: {
+    //   //             "Content-Type": "application/json; charset=UTF-8",
+    //   //             "Access-Control-Allow-Origin": '*',
+    //   //             "myqueu-x-token": `${token}`,
+    //   //             "Accept": 'application/json'
+    //   //          },
+    //   //          method: "POST",
+    //   //          mode: 'cors',
+    //   //          body: JSON.stringify(tempFormData)
+    //   //   })
+    //   //   .then((response) => response.json() )
+    //   //   .then((data) => {
+    //   //     console.log(data)
+    //   //     clearInterval(interval)
+    //   //     if(data){}
+    //   //   })
+    //   //   .catch((err) => console.log(err))
+    // }, 60000);
+
+
+    //ON PAGE LOAD CHECK FOR COOKIE AND REDIRECT TO LOGIN PAGE IF NOT FOUND
+    //IF FOUND, FETCH FORM DATA IF ANY
     useEffect(() => {
       if(!document.cookie || !token){
           alert('Session Expired! Login to Access Form.')
@@ -1139,7 +1172,7 @@ function Enrolmentform() {
 
                   {/* Booking Details */}
                   <div className="names_block_N block row">
-                      <h3 className="block_heading">BOOK APPOINTMENT FOR NIN SLIP COLLECTION</h3>
+                      <h3 className="block_heading">BOOK APPOINTMENT FOR NIN SLIP DATA CAPTURING</h3>
                       <p style={{textAlign:'center', fontWeight:'bold'}} className='red-text'>Pay extra attention to month and day chosen, once picked, it cannot be changed!</p>
                       {/* "month": "Jan",
                       "year": 2021,

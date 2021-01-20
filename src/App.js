@@ -10,6 +10,7 @@ import Verify from './components/verify'
 import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import Profile from './components/profile';
 import Home from './components/home';
+import Receipt from './components/receipt';
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
           <Route path='/enrolmentform' component={Enrolmentform} />
           <Route path='/verify' component={Verify} />
           <Route path='/profile' component={Profile} />
+          <Route path='/receipt' component={Receipt} />
         </Switch>
       </Router>
     </>
