@@ -10,7 +10,7 @@ function Login() {
     //const [loginResponse, setLoginResponse] = useState('')
     const [loading, setLoading] = useState(false)
     // const [token, setToken] = useState('')
-    //const [cookies, setCookies] = useState('')
+    const [cookies, setCookies] = useState('')
     const [formcount] = useState(0)
 
     const handleUserEmail = ({target}) =>{
@@ -76,7 +76,7 @@ function Login() {
                 date.setTime(expiryTime)
                 let utcTime = date.toUTCString();
                 document.cookie = `__browser_data= ${data.data.token}; expires=${utcTime};`
-                //setCookies(document.cookie)
+                setCookies(document.cookie)
 
                 // const currentTime = new Date().getTime();
                 // document.cookie = `__browser_data= ${data.data.token}; expires=${currentTime + (60 * 60 * 24 * 1000 * 1)};`
@@ -107,8 +107,8 @@ function Login() {
     let email = localStorage.getItem('__browser_user')
     let name = localStorage.getItem('__name')
     
-    if(/__browser_data/.test(document.cookie)){
-    // if(cookies || document.cookie){
+    //if(/__browser_data/.test(document.cookie) === true){
+    if(cookies || document.cookie){
         return (
             <div className="home-container">
                 <div className="container z-depth-4">
