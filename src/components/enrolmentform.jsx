@@ -3,79 +3,79 @@ import NIMClogo from './img/nimc.png'
 import Spinner from './spinner'
 
 function Enrolmentform() {
-    const [title, setTitle] = useState("")
-    const [firstName, setfirstName] = useState("")
-    const [lastName, setlastName] = useState("")
+    const [, setTitle] = useState("")
+    const [, setfirstName] = useState("")
+    const [, setlastName] = useState("")
     // const [marriedWoman, setMarriedWoman] = useState("")
-    const [maidenName, setmaidenName] = useState("")
+    const [, setmaidenName] = useState("")
     const [nameChange, setnameChange] = useState("")
-    const [previousSurname, setpreviousSurname] = useState("")
-    const [previousFirstName, setpreviousFirstName] = useState("")
-    const [previousMiddleName, setpreviousMiddleName] = useState("")
+    const [, setpreviousSurname] = useState("")
+    const [, setpreviousFirstName] = useState("")
+    const [, setpreviousMiddleName] = useState("")
     const [homeless, setHomeless] = useState("")
-    const [cityOfResidence, setcityOfResidence] = useState("")
-    const [countryOfResidence, setcountryOfResidence] = useState("")
-    const [stateOfResidence, setstateOfResidence] = useState("")
-    const [lgaOfResidence, setLgaOfResidence] = useState("")
-    const [addressOfResidence, setAddressOfResidence] = useState("")
-    const [postalCode, setPostalCode] = useState("")
-    const [dateOfBirth, setdateOfBirth] = useState("")
+    const [, setcityOfResidence] = useState("")
+    const [, setcountryOfResidence] = useState("")
+    const [, setstateOfResidence] = useState("")
+    const [, setLgaOfResidence] = useState("")
+    const [, setAddressOfResidence] = useState("")
+    const [, setPostalCode] = useState("")
+    const [, setdateOfBirth] = useState("")
     const [birthVerification, setbirthVerification] = useState("")
-    const [birthCountry, setbirthCountry] = useState("")
-    const [birthLga, setbirthLga] = useState("")
-    const [birthState, setbirthState] = useState("")
-    const [originCountry, setoriginCountry] = useState("")
-    const [originState, setoriginState] = useState("")
-    const [originLga, setoriginLga] = useState("")
-    const [originTown, setoriginTown] = useState("")
-    const [fatheroriginCountry, setfatheroriginCountry] = useState("")
-    const [fatheroriginState, setfatheroriginState] = useState("")
-    const [fatheroriginLga, setfatheroriginLga] = useState("")
-    const [fatheroriginTown, setfatheroriginTown] = useState("")
-    const [motheroriginCountry, setmotheroriginCountry] = useState("")
-    const [motheroriginState, setmotheroriginState] = useState("")
-    const [motheroriginLga, setmotheroriginLga] = useState("")
-    const [motheroriginTown, setmotheroriginTown] = useState("")
+    const [, setbirthCountry] = useState("")
+    const [, setbirthLga] = useState("")
+    const [, setbirthState] = useState("")
+    const [, setoriginCountry] = useState("")
+    const [, setoriginState] = useState("")
+    const [, setoriginLga] = useState("")
+    const [, setoriginTown] = useState("")
+    const [, setfatheroriginCountry] = useState("")
+    const [, setfatheroriginState] = useState("")
+    const [, setfatheroriginLga] = useState("")
+    const [, setfatheroriginTown] = useState("")
+    const [, setmotheroriginCountry] = useState("")
+    const [, setmotheroriginState] = useState("")
+    const [, setmotheroriginLga] = useState("")
+    const [, setmotheroriginTown] = useState("")
     const [gender, setGender] = useState("")
-    const [height, setHeight] = useState("")
+    const [, setHeight] = useState("")
     const [residenceStatus, setResidenceStatus] = useState("")
-    const [nationality, setNationality] = useState("")
+    const [, setNationality] = useState("")
     const [supportingDocuments, setsupportingDocuments] = useState("")
-    const [supportingDocumentNumber, setdocumentNumber] = useState("")
-    const [documentExpiryDate, setdocumentExpiryDate] = useState("")
+    const [, setdocumentNumber] = useState("")
+    const [, setdocumentExpiryDate] = useState("")
     const [maritalStatus, setmaritalStatus] = useState("")
-    const [nativeLanguage, setNativeLanguage] = useState("")
-    const [languagesYouReadAndWrite, setlanguagesYouReadAndWrite] = useState("")
-    const [otherLanguagesSpoken, setotherLanguagesSpoken] = useState("")
+    const [, setNativeLanguage] = useState("")
+    const [, setlanguagesYouReadAndWrite] = useState("")
+    const [, setotherLanguagesSpoken] = useState("")
     const [educationLevel, seteducationLevel] = useState("")
     const [religion, setReligion] = useState("")
-    const [telephone, setTelephone] = useState("")
+    const [, setTelephone] = useState("")
     const [employmentStatus, setEmploymentStatus] = useState("")
-    const [emailAddress, setEmailAddress] = useState("")
-    const [occupation, setOccupation] = useState("")
-    const [fathersSurname, setfathersSurname] = useState("")
-    const [fathersFirstName, setfathersFirstName] = useState("")
-    const [fathersMiddleName, setfathersMiddleName] = useState("")
-    const [fathersNin, setfathersNin] = useState("")
-    const [mothersSurname, setmothersSurname] = useState("")
-    const [mothersFirstName, setmothersFirstName] = useState("")
-    const [mothersMiddleName, setmothersMiddleName] = useState("")
+    const [, setEmailAddress] = useState("")
+    const [, setOccupation] = useState("")
+    const [, setfathersSurname] = useState("")
+    const [, setfathersFirstName] = useState("")
+    const [, setfathersMiddleName] = useState("")
+    const [, setfathersNin] = useState("")
+    const [, setmothersSurname] = useState("")
+    const [, setmothersFirstName] = useState("")
+    const [, setmothersMiddleName] = useState("")
     // const [mothersMaidenName, setmothersMaidenName] = useState('')
-    const [mothersNin, setmothersNin] = useState("")
-    const [guardianSurname, setguardianSurname] = useState("")
-    const [guardianFirstName, setguardianFirstname] = useState("")
-    const [guardianMiddleName, setguardianMiddlename] = useState("")
-    const [guardianNin, setguardianNin] = useState("")
-    const [nextOfKinSurname, setnextOfKinSurname] = useState("")
-    const [nextOfKinFirstname, setnextOfKinFirstname] = useState("")
-    const [nextOfKinMiddlename, setnextOfKinMiddlename] = useState("")
-    const [nextOfKinRelationship, setnextOfKinRelationship] = useState("")
-    const [nextOfKinCountry, setnextOfKinCountry] = useState("")
-    const [nextOfKinState, setnextOfKinState] = useState("")
-    const [nextOfKinLga, setnextOfKinLga] = useState("")
-    const [nextOfKinTown, setnextOfKinTown] = useState("")
-    const [nextOfKinStreetAddress, setnextOfKinStreetAddress] = useState("")
-    const [nextOfKinNin, setnextOfKinNin] = useState("")
+    const [, setmothersNin] = useState("")
+    const [, setguardianSurname] = useState("")
+    const [, setguardianFirstname] = useState("")
+    const [, setguardianMiddlename] = useState("")
+    const [, setguardianNin] = useState("")
+    const [, setnextOfKinSurname] = useState("")
+    const [, setnextOfKinFirstname] = useState("")
+    const [, setnextOfKinMiddlename] = useState("")
+    const [, setnextOfKinRelationship] = useState("")
+    const [, setnextOfKinCountry] = useState("")
+    const [, setnextOfKinState] = useState("")
+    const [, setnextOfKinLga] = useState("")
+    const [, setnextOfKinTown] = useState("")
+    const [, setnextOfKinStreetAddress] = useState("")
+    const [, setnextOfKinNin] = useState("")
     const [declaration, setDeclaration] = useState("")
     
     // APPOINTMENT STATES
@@ -90,137 +90,188 @@ function Enrolmentform() {
     const [timeResponse, setTimeResponse] = useState("")
     const [selectedTime, setSelectedTime] = useState("")
 
+    
+    //ON PAGE LOAD CHECK FOR COOKIE AND REDIRECT TO LOGIN PAGE IF NOT FOUND
+    //IF FOUND, FETCH FORM DATA IF ANY
+    useEffect(() => {
+      if(!document.cookie || !token){
+          alert('Session Expired! Login to Access Form.')
+          window.location='/#/login'
+      }
+      
+      
+    })
+
+
+    //SAVE FROM TO LOCAL STORAGE FOR DRAFTS
     const handleTitle = ({target}) =>{
       setTitle(target.value)
+      localStorage.setItem('title', target.value)
     }
+
     const handleFirstName = ({target}) =>{
       setfirstName(target.value)
+      localStorage.setItem('firstName', target.value)
     }
     const handleLastName = ({target}) =>{
       setlastName(target.value)
+      localStorage.setItem('lastName', target.value)
     }
     // const handleMarriedWoman = ({target}) =>{
     //   setMarriedWoman(target.value)
     // }
     const handleMaidenName = ({target}) =>{
       setmaidenName(target.value)
+      localStorage.setItem('maidenName', target.value)
     }
     const handleNameChange = ({target}) =>{
       setnameChange(target.value)
     }
     const handlePreviousSurname = ({target}) =>{
       setpreviousSurname(target.value)
+      localStorage.setItem('previousSurname', target.value)
     }
     const handlePreviousFirstName = ({target}) =>{
       setpreviousFirstName(target.value)
+      localStorage.setItem('previousFirstName', target.value)
     }
     const handlePreviousMiddleName = ({target}) =>{
       setpreviousMiddleName(target.value)
+      localStorage.setItem('previousMiddleName', target.value)
     }
     const handleHomeless = ({target}) =>{
       setHomeless(target.value)
     }
     const handleCityOfResidence = ({target}) =>{
       setcityOfResidence(target.value)
+      localStorage.setItem('cityOfResidence', target.value)
     }
     const handleCountryOfResidence = ({target}) =>{
       setcountryOfResidence(target.value)
+      localStorage.setItem('countryOfResidence', target.value)
     }
     const handleStateOfResidence = ({target}) =>{
       setstateOfResidence(target.value)
+      localStorage.setItem('stateOfResidence', target.value)
     }
     const handleLgaOfResidence = ({target}) =>{
       setLgaOfResidence(target.value)
+      localStorage.setItem('lgaOfResidence', target.value)
     }
     const handleAddressOfResidence = ({target}) =>{
       setAddressOfResidence(target.value)
+      localStorage.setItem('addressOfResidence', target.value)
     }
     const handlePostalCode = ({target}) =>{
       setPostalCode(target.value)
+      localStorage.setItem('postalCode', target.value)
     }
     const handleDateOfBirth = ({target}) =>{
       setdateOfBirth(target.value)
+      localStorage.setItem('dateOfBirth', target.value)
     }
     const handleBirthVerification = ({target}) =>{
       setbirthVerification(target.value)
     }
     const handleBirthCountry = ({target}) =>{
       setbirthCountry(target.value)
+      localStorage.setItem('birthCountry', target.value)
     }
     const handleBirthState = ({target}) =>{
       setbirthState(target.value)
+      localStorage.setItem('birthState', target.value)
     }
     const handleBirthLga = ({target}) =>{
       setbirthLga(target.value)
+      localStorage.setItem('birthLga', target.value)
     }
     const handleOriginCountry = ({target}) =>{
       setoriginCountry(target.value)
+      localStorage.setItem('originCountry', target.value)
     }
     const handleOriginState = ({target}) =>{
       setoriginState(target.value)
+      localStorage.setItem('originState', target.value)
     }
     const handleOriginLga = ({target}) =>{
       setoriginLga(target.value)
+      localStorage.setItem('originLga', target.value)
     }
     const handleOriginTown = ({target}) =>{
       setoriginTown(target.value)
+      localStorage.setItem('originTown', target.value)
     }
     const handleFatherOriginCountry = ({target}) =>{
       setfatheroriginCountry(target.value)
+      localStorage.setItem('fatheroriginCountry', target.value)
     }
     const handleFatherOriginState = ({target}) =>{
       setfatheroriginState(target.value)
+      localStorage.setItem('fatheroriginState', target.value)
     }
     const handleFatherOriginLga = ({target}) =>{
       setfatheroriginLga(target.value)
+      localStorage.setItem('fatheroriginLga', target.value)
     }
     const handleFatherOriginTown = ({target}) =>{
       setfatheroriginTown(target.value)
+      localStorage.setItem('fatheroriginTown', target.value)
     }
     const handleMotherOriginCountry = ({target}) =>{
       setmotheroriginCountry(target.value)
+      localStorage.setItem('motheroriginCountry', target.value)
     }
     const handleMotherOriginState = ({target}) =>{
       setmotheroriginState(target.value)
+      localStorage.setItem('motheroriginState', target.value)
     }
     const handleMotherOriginLga = ({target}) =>{
       setmotheroriginLga(target.value)
+      localStorage.setItem('motheroriginLga', target.value)
     }
     const handleMotherOriginTown = ({target}) =>{
       setmotheroriginTown(target.value)
+      localStorage.setItem('motheroriginTown', target.value)
     }
     const handleGender = ({target}) =>{
       setGender(target.value)
     }
     const handleHeight = ({target}) =>{
       setHeight(target.value)
+      localStorage.setItem('height', target.value)
     }
     const handleResidenceStatus = ({target}) =>{
       setResidenceStatus(target.value)
     }
     const handleNationality = ({target}) =>{
       setNationality(target.value)
+      localStorage.setItem('nationality', target.value)
     }
     const handleSupportingDocuments = ({target}) =>{
       setsupportingDocuments(target.value)
     }
     const handleDocumentNumber = ({target}) =>{
       setdocumentNumber(target.value)
+      localStorage.setItem('documentNumber', target.value)
     }
     const handleDocumentExpiryDate = ({target}) =>{
       setdocumentExpiryDate(target.value)
+      localStorage.setItem('documentExpiryDate', target.value)
     }
     const handleMaritalStatus = ({target}) =>{
       setmaritalStatus(target.value)
     }
     const handleNativeLanguage = ({target}) =>{
       setNativeLanguage(target.value)
+      localStorage.setItem('nativeLanguage', target.value)
     }
     const handleLanguagesRead = ({target}) =>{
       setlanguagesYouReadAndWrite(target.value)
+      localStorage.setItem('languagesYouReadAndWrite', target.value)
     }
     const handleOtherLanguages = ({target}) =>{
       setotherLanguagesSpoken(target.value)
+      localStorage.setItem('otherLanguagesSpoken', target.value)
     }
     const handleEducationLevel = ({target}) =>{
       seteducationLevel(target.value)
@@ -230,84 +281,109 @@ function Enrolmentform() {
     }
     const handleTelephone = ({target}) =>{
       setTelephone(target.value)
+      localStorage.setItem('telephone', target.value)
     }
     const handleEmploymentStatus = ({target}) =>{
       setEmploymentStatus(target.value)
     }
     const handleEmailAddress = ({target}) =>{
       setEmailAddress(target.value)
+      localStorage.setItem('emailAddress', target.value)
     }
     const handleOccupation = ({target}) =>{
       setOccupation(target.value)
+      localStorage.setItem('occupation', target.value)
     }
     const handleFathersSurname = ({target}) =>{
       setfathersSurname(target.value)
+      localStorage.setItem('fathersSurname', target.value)
     }
     const handleFathersFirstName = ({target}) =>{
       setfathersFirstName(target.value)
+      localStorage.setItem('fathersFirstName', target.value)
     }
     const handleFathersMiddleName = ({target}) =>{
       setfathersMiddleName(target.value)
+      localStorage.setItem('fathersMiddleName', target.value)
     }
     const handleFathersNin = ({target}) =>{
       setfathersNin(target.value)
+      localStorage.setItem('fathersNin', target.value)
     }
     const handleMothersSurname = ({target}) =>{
       setmothersSurname(target.value)
+      localStorage.setItem('mothersSurname', target.value)
     }
     const handleMothersFirstName = ({target}) =>{
       setmothersFirstName(target.value)
+      localStorage.setItem('mothersFirstName', target.value)
     }
     const handleMothersMiddleName = ({target}) =>{
       setmothersMiddleName(target.value)
+      localStorage.setItem('mothersMiddleName', target.value)
     }
     // const handleMothersMaidenName = ({target}) =>{
     //   setmothersMaidenName(target.value)
     // }
     const handleMothersNin = ({target}) =>{
       setmothersNin(target.value)
+      localStorage.setItem('mothersNin', target.value)
     }
     const handleGuardianSurname = ({target}) =>{
       setguardianSurname(target.value)
+      localStorage.setItem('guardianSurname', target.value)
     }
     const handleGuardianFirstname = ({target}) =>{
       setguardianFirstname(target.value)
+      localStorage.setItem('guardianFirstname', target.value)
     }
     const handleGuardianMiddlename = ({target}) =>{
       setguardianMiddlename(target.value)
+      localStorage.setItem('guardianMiddlename', target.value)
     }
     const handleGuardianNin = ({target}) =>{
       setguardianNin(target.value)
+      localStorage.setItem('guardianNin', target.value)
     }
     const handleNextOfKinSurname = ({target}) =>{
       setnextOfKinSurname(target.value)
+      localStorage.setItem('nextOfKinSurname', target.value)
     }
     const handleNextOfKinFirstname = ({target}) =>{
       setnextOfKinFirstname(target.value)
+      localStorage.setItem('nextOfKinFirstname', target.value)
     }
     const handleNextOfKinMiddlename = ({target}) =>{
       setnextOfKinMiddlename(target.value)
+      localStorage.setItem('nextOfKinMiddlename', target.value)
     }
     const handleNextOfKinRelationship = ({target}) =>{
       setnextOfKinRelationship(target.value)
+      localStorage.setItem('nextOfKinRelationship', target.value)
     }
     const handleNextOfKinCountry = ({target}) =>{
       setnextOfKinCountry(target.value)
+      localStorage.setItem('nextOfKinCountry', target.value)
     }
     const handleNextOfKinState = ({target}) =>{
       setnextOfKinState(target.value)
+      localStorage.setItem('nextOfKinState', target.value)
     }
     const handleNextOfKinLga = ({target}) =>{
       setnextOfKinLga(target.value)
+      localStorage.setItem('nextOfKinLga', target.value)
     }
     const handleNextOfKinTown = ({target}) =>{
       setnextOfKinTown(target.value)
+      localStorage.setItem('nextOfKinTown', target.value)
     }
     const handleNextOfKinStreetAddress = ({target}) =>{
       setnextOfKinStreetAddress(target.value)
+      localStorage.setItem('nextOfKinStreetAddress', target.value)
     }
     const handleNextOfKinNin = ({target}) =>{
       setnextOfKinNin(target.value)
+      localStorage.setItem('nextOfKinNin', target.value)
     }
     const handleDeclaration = ({target}) =>{
       setDeclaration(target.value)
@@ -402,128 +478,151 @@ function Enrolmentform() {
     }
 
     const enrolmentForm = {
-      title: title,
-      firstName: firstName,
-      lastName: lastName,
-      maidenName: maidenName,
+      title: localStorage.getItem('title'),
+      firstName: localStorage.getItem('firstName'),
+      lastName: localStorage.getItem('lastName'),
+      maidenName: localStorage.getItem('maidenName'),
       changedName: nameChange,
-      previousSurname: previousSurname,
-      previousFirstName: previousFirstName,
-      previousMiddleName: previousMiddleName,
+      previousSurname: localStorage.getItem('previousSurname'),
+      previousFirstName: localStorage.getItem('previousFirstName'),
+      previousMiddleName: localStorage.getItem('previousMiddleName'),
       homeless: homeless,
-      cityOfResidence: cityOfResidence,
-      countryOfResidence: countryOfResidence,
-      stateOfResidence: stateOfResidence,
-      lgaOfResidence: lgaOfResidence,
-      addressOfResidence: addressOfResidence,
-      postalCode: postalCode,
-      dateOfBirth: dateOfBirth,
+      cityOfResidence: localStorage.getItem('cityOfResidence'),
+      countryOfResidence: localStorage.getItem('countryOfResidence'),
+      stateOfResidence: localStorage.getItem('stateOfResidence'),
+      lgaOfResidence: localStorage.getItem('lgaOfResidence'),
+      addressOfResidence: localStorage.getItem('addressOfResidence'),
+      postalCode: localStorage.getItem('postalCode'),
+      dateOfBirth: localStorage.getItem('dateOfBirth'),
       birthVerification: birthVerification,
-      birthCountry: birthCountry,
-      birthState: birthState,
-      birthLga: birthLga,
-      originatingCountry: originCountry,
-      originatingState: originState,
-      originatingLga: originLga,
-      originatingTown: originTown,
-      fatherOriginatingCountry: fatheroriginCountry,
-      fatherOriginatingState: fatheroriginState,
-      fatherOriginatingLga: fatheroriginLga,
-      fatherOriginatingTown: fatheroriginTown,
-      motherOriginatingCountry: motheroriginCountry,
-      motherOriginatingState: motheroriginState,
-      motherOriginatingLga: motheroriginLga,
-      motherOriginatingTown: motheroriginTown,
+      birthCountry: localStorage.getItem('birthCountry'),
+      birthState: localStorage.getItem('birthState'),
+      birthLga: localStorage.getItem('birthLga'),
+      originatingCountry: localStorage.getItem('originCountry'),
+      originatingState: localStorage.getItem('originState'),
+      originatingLga: localStorage.getItem('originLga'),
+      originatingTown: localStorage.getItem('originTown'),
+      fatherOriginatingCountry: localStorage.getItem('fatheroriginCountry'),
+      fatherOriginatingState: localStorage.getItem('fatheroriginState'),
+      fatherOriginatingLga: localStorage.getItem('fatheroriginLga'),
+      fatherOriginatingTown: localStorage.getItem('fatheroriginTown'),
+      motherOriginatingCountry: localStorage.getItem('motheroriginCountry'),
+      motherOriginatingState: localStorage.getItem('motheroriginState'),
+      motherOriginatingLga: localStorage.getItem('motheroriginLga'),
+      motherOriginatingTown: localStorage.getItem('motheroriginTown'),
       gender: gender,
-      height: height,
+      height: localStorage.getItem('height'),
       residenceStatus: residenceStatus,
-      nationality: nationality,
+      nationality: localStorage.getItem('nationality'),
       maritalStatus: maritalStatus,
-      mainNativeLanguageSpoken: nativeLanguage,
-      languagesYouReadAndWrite: languagesYouReadAndWrite,
-      otherLanguagesSpoken: otherLanguagesSpoken,
+      mainNativeLanguageSpoken: localStorage.getItem('nativeLanguage'),
+      languagesYouReadAndWrite: localStorage.getItem('languagesYouReadAndWrite'),
+      otherLanguagesSpoken: localStorage.getItem('otherLanguagesSpoken'),
       educationLevel: educationLevel,
       religion: religion,
-      telephone: telephone,
+      telephone: localStorage.getItem('telephone'),
       employmentStatus: employmentStatus,
-      emailAddress: emailAddress,
-      occupation: occupation,
-      fathersSurname: fathersSurname,
-      fathersFirstName: fathersFirstName,
-      fathersMiddleName: fathersMiddleName,
-      fathersNin: fathersNin,
-      mothersSurname: mothersSurname,
-      mothersFirstName: mothersFirstName,
-      mothersMiddleName: mothersMiddleName,
-      mothersNin: mothersNin,
-      guardianSurname: guardianSurname,
-      guardianFirstname: guardianFirstName,
-      guardianMiddlename: guardianMiddleName,
-      guardianNin: guardianNin,
-      nextOfKinSurname: nextOfKinSurname,
-      nextOfKinFirstname: nextOfKinFirstname,
-      nextOfKinMiddlename: nextOfKinMiddlename,
-      nextOfKinRelationship: nextOfKinRelationship,
-      nextOfKinCountry: nextOfKinCountry,
-      nextOfKinState: nextOfKinState,
-      nextOfKinTown: nextOfKinTown,
-      nextOfKinLga: nextOfKinLga,
-      nextOfKinStreetAddress: nextOfKinStreetAddress,
-      nextOfKinNin: nextOfKinNin
+      emailAddress: localStorage.getItem('emailAddress'),
+      occupation: localStorage.getItem('occupation'),
+      fathersSurname: localStorage.getItem('fathersSurname'),
+      fathersFirstName: localStorage.getItem('fathersFirstName'),
+      fathersMiddleName: localStorage.getItem('fathersMiddleName'),
+      fathersNin: localStorage.getItem('fathersNin'),
+      mothersSurname: localStorage.getItem('mothersSurname'),
+      mothersFirstName: localStorage.getItem('mothersFirstName'),
+      mothersMiddleName: localStorage.getItem('mothersMiddleName'),
+      mothersNin: localStorage.getItem('mothersNin'),
+      guardianSurname: localStorage.getItem('guardianSurname'),
+      guardianFirstname: localStorage.getItem('guardianFirstname'),
+      guardianMiddlename: localStorage.getItem('guardianMiddlename'),
+      guardianNin: localStorage.getItem('guardianNin'),
+      nextOfKinSurname: localStorage.getItem('nextOfKinSurname'),
+      nextOfKinFirstname: localStorage.getItem('nextOfKinFirstname'),
+      nextOfKinMiddlename: localStorage.getItem('nextOfKinMiddlename'),
+      nextOfKinRelationship: localStorage.getItem('nextOfKinRelationship'),
+      nextOfKinCountry: localStorage.getItem('nextOfKinCountry'),
+      nextOfKinState: localStorage.getItem('nextOfKinState'),
+      nextOfKinTown: localStorage.getItem('nextOfKinTown'),
+      nextOfKinLga: localStorage.getItem('nextOfKinLga'),
+      nextOfKinStreetAddress: localStorage.getItem('nextOfKinStreetAddress'),
+      nextOfKinNin: localStorage.getItem('nextOfKinNin'),
+      year: appointmentYear,
+      date: appointmentDay,
+      month: appointmentMonth,
+      branch: appointmentBranch,
+      time: selectedTime
     }
     
     if(supportingDocuments === 'anyIdentityReference'){
       enrolmentForm.anyIdentityReference = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     } 
     else if(supportingDocuments === 'immigrationDocument'){
       enrolmentForm.immigrationDocument = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     }
     else if(supportingDocuments === 'nationalInsurance'){
       enrolmentForm.nationalInsurance = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     }
     else if(supportingDocuments === 'nigeriaDriverLicense'){
       enrolmentForm.nigeriaDriverLicense = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     }
     else if(supportingDocuments === 'nigerianPassport'){
       enrolmentForm.nigerianPassport = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     }
     else if(supportingDocuments === 'otherDesignatedDocument'){
       enrolmentForm.otherDesignatedDocument = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     }
     else if(supportingDocuments === 'otherNationalIdentityCard'){
       enrolmentForm.otherNationalIdentityCard = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     }
     else if(supportingDocuments === 'otherPassport'){
       enrolmentForm.otherPassport = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     }
     else if(supportingDocuments === 'otherTravelDocument'){
       enrolmentForm.otherTravelDocument = {
-        documentNumber : supportingDocumentNumber,
-        expiryDate: documentExpiryDate
+        //documentNumber : supportingDocumentNumber,
+        documentNumber : localStorage.getItem('documentNumber'),
+        expiryDate : localStorage.getItem('documentExpiryDate')
+        //expiryDate: documentExpiryDate
       }
     }
        
@@ -536,11 +635,6 @@ function Enrolmentform() {
         alert('Please Accept Declaration/Attestation!')
         return false
       }
-      enrolmentForm.year = appointmentYear
-      enrolmentForm.date = appointmentDay
-      enrolmentForm.month = appointmentMonth
-      enrolmentForm.branch = appointmentBranch
-      enrolmentForm.time = selectedTime
       setLoading("submit")
       await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/create/nin",
           {
@@ -614,15 +708,6 @@ function Enrolmentform() {
     // }, 60000);
 
 
-    //ON PAGE LOAD CHECK FOR COOKIE AND REDIRECT TO LOGIN PAGE IF NOT FOUND
-    //IF FOUND, FETCH FORM DATA IF ANY
-    useEffect(() => {
-      if(!document.cookie || !token){
-          alert('Session Expired! Login to Access Form.')
-          window.location='/#/login'
-      }
-    })
-
 
     return (
         <>
@@ -637,17 +722,17 @@ function Enrolmentform() {
                       <h3 className="block_heading">WHAT ARE YOUR NAMES?</h3>
                       <div className="input-field col s12">
                         <label htmlFor="title">TITLE (Mr/Mrs/Master/Miss/Ms): </label>
-                        <input onChange={handleTitle} id='title' type="text" required/>
+                        <input onChange={handleTitle} value={localStorage.getItem('title') === null ? '' : localStorage.getItem('title')} id='title' type="text" required/>
                       </div>
                     
                       <div className="input-field col s6">
                         <label htmlFor="lastname">LAST NAME: </label>
-                        <input onChange={handleLastName} id='lastname' type="text"/>
+                        <input onChange={handleLastName} value={localStorage.getItem('lastName') === null ? '' : localStorage.getItem('lastName')} id='lastname' type="text"/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="firstname">FIRST NAME: </label>
-                        <input onChange={handleFirstName} id='firstname' type="text" required/>
+                        <input onChange={handleFirstName} value={localStorage.getItem('firstName') === null ? '' : localStorage.getItem('firstName')} id='firstname' type="text" required/>
                       </div>
                       
                       {/* <div className="input-field col s12">
@@ -684,7 +769,7 @@ function Enrolmentform() {
                         </div> : null} */}
                       <div className="input-field col s12">
                           <label htmlFor="maidenname">MAIDEN NAME: </label>
-                          <input onChange={handleMaidenName} id='maidenname' type="text" required/>
+                          <input onChange={handleMaidenName} value={localStorage.getItem('maidenName') === null ? '' : localStorage.getItem('maidenName')} id='maidenname' type="text" required/>
                       </div>
                   </div>
 
@@ -709,17 +794,17 @@ function Enrolmentform() {
                     <div>
                       <div className="input-field col s12">
                         <label htmlFor="prevsurname">PREVIOUS SURNAME:</label>
-                        <input id='prevsurname' onChange={handlePreviousSurname} type="text" required/>
+                        <input id='prevsurname' value={localStorage.getItem('previousSurname') === null ? '' : localStorage.getItem('previousSurname')} onChange={handlePreviousSurname} type="text" required/>
                       </div>
                   
                       <div className="input-field col s12">
                         <label htmlFor="prevfirstname">PREVIOUS FIRST NAME:</label>
-                        <input id='prevfirstname' onChange={handlePreviousFirstName} type="text"/>
+                        <input id='prevfirstname' value={localStorage.getItem('previousFirstName') === null ? '' : localStorage.getItem('previousFirstName')} onChange={handlePreviousFirstName} type="text"/>
                       </div>
                     
                       <div className="input-field col s12">
                         <label htmlFor="prevmidname">PREVIOUS MIDDLE NAME: </label>
-                        <input id='prevmidname' onChange={handlePreviousMiddleName} type="text" required/>
+                        <input id='prevmidname' value={localStorage.getItem('previousMiddleName') === null ? '' : localStorage.getItem('previousMiddleName')} onChange={handlePreviousMiddleName} type="text" required/>
                       </div> 
                     </div> : null}
                   </div>
@@ -745,32 +830,32 @@ function Enrolmentform() {
                         <div>
                           <div className="input-field col s6">
                             <label htmlFor="cityresidence">CITY OF RESIDENCE:</label>
-                            <input id='cityresidence' onChange={handleCityOfResidence} type="text" required/>
+                            <input id='cityresidence' value={localStorage.getItem('cityOfResidence') === null ? '' : localStorage.getItem('cityOfResidence')} onChange={handleCityOfResidence} type="text" required/>
                           </div>
                         
                           <div className="input-field col s6">
                             <label htmlFor="countryresidence">COUNTRY OF RESIDENCE:</label>
-                            <input id='countryresidence' onChange={handleCountryOfResidence} type="text" required/>
+                            <input id='countryresidence' value={localStorage.getItem('countryOfResidence') === null ? '' : localStorage.getItem('countryOfResidence')} onChange={handleCountryOfResidence} type="text" required/>
                           </div>
                           
                           <div className="input-field col s6">
                             <label htmlFor="stateresidence">STATE OF RESIDENCE: </label>
-                            <input id='stateresidence' onChange={handleStateOfResidence} type="text" required/>
+                            <input id='stateresidence' value={localStorage.getItem('stateOfResidence') === null ? '' : localStorage.getItem('stateOfResidence')} onChange={handleStateOfResidence} type="text" required/>
                           </div>
 
                           <div className="input-field col s6">
                             <label htmlFor="lgaresidence">LGA OF RESIDENCE: </label>
-                            <input id='lgaresidence' onChange={handleLgaOfResidence} type="text" required/>
+                            <input id='lgaresidence' value={localStorage.getItem('lgaOfResidence') === null ? '' : localStorage.getItem('lgaOfResidence')} onChange={handleLgaOfResidence} type="text" required/>
                           </div>
 
                           <div className="input-field col s6">
                             <label htmlFor="residenceaddress">ADDRESS OF RESIDENCE: </label>
-                            <input id='residenceaddress' onChange={handleAddressOfResidence} type="text" required/>
+                            <input id='residenceaddress' value={localStorage.getItem('addressOfResidence') === null ? '' : localStorage.getItem('addressOfResidence')} onChange={handleAddressOfResidence} type="text" required/>
                           </div>
                           
                           <div className="input-field col s6">
                             <label htmlFor="postalcode">POSTAL CODE: </label>
-                            <input id='postalcode' onChange={handlePostalCode} type="number" required/>
+                            <input id='postalcode' value={localStorage.getItem('postalCode') === null ? '' : localStorage.getItem('postalCode')} onChange={handlePostalCode} type="number" required/>
                           </div>
                         </div> : null}
                   </div>
@@ -780,7 +865,7 @@ function Enrolmentform() {
                       <h3 className="block_heading">WHEN AND WHERE WERE YOU BORN?</h3>
                       <div className="input-field col s12">
                         <p htmlFor="dateofbirth">DATE OF BIRTH:</p>
-                        <input id='dateofbirth' onChange={handleDateOfBirth} type='date' required/>
+                        <input id='dateofbirth' onChange={handleDateOfBirth} value={localStorage.getItem('dateOfBirth') === null ? '' : localStorage.getItem('dateOfBirth')} type='date' required/>
                       </div>
                     
                       <div className="input-field col s12">
@@ -795,17 +880,17 @@ function Enrolmentform() {
                       
                       <div className="input-field col s12">
                         <label htmlFor="pobcountry">PLACE OF BIRTH - COUNTRY:</label>
-                        <input id='pobcountry' onChange={handleBirthCountry} type="text" required/>
+                        <input id='pobcountry' value={localStorage.getItem('birthCountry') === null ? '' : localStorage.getItem('birthCountry')} onChange={handleBirthCountry} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="pobstate">PLACE OF BIRTH - STATE:</label>
-                        <input id='pobstate' onChange={handleBirthState} type="text" required/>
+                        <input id='pobstate' value={localStorage.getItem('birthState') === null ? '' : localStorage.getItem('birthState')} onChange={handleBirthState} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="poblocalgovt">PLACE OF BIRTH - LGA:</label>
-                        <input id='poblocalgovt' onChange={handleBirthLga} type="text" required/>
+                        <input id='poblocalgovt' value={localStorage.getItem('birthLga') === null ? '' : localStorage.getItem('birthLga')} onChange={handleBirthLga} type="text" required/>
                       </div>
                   </div>
 
@@ -814,22 +899,22 @@ function Enrolmentform() {
                       <h3 className="block_heading">WHERE ARE YOU FROM?</h3>
                       <div className="input-field col s12">
                         <label htmlFor="origincountry">PLACE OF ORIGIN - COUNTRY:</label>
-                        <input id='origincountry' onChange={handleOriginCountry} type='text' required/>
+                        <input id='origincountry' value={localStorage.getItem('originCountry') === null ? '' : localStorage.getItem('originCountry')} onChange={handleOriginCountry} type='text' required/>
                       </div>
                       
                       <div className="input-field col s12">
                         <label htmlFor="originstate">PLACE OF ORIGIN - STATE:</label>
-                        <input id='originstate' onChange={handleOriginState} type="text" required/>
+                        <input id='originstate' value={localStorage.getItem('originState') === null ? '' : localStorage.getItem('originState')} onChange={handleOriginState} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="originlocalgovt">PLACE OF ORIGIN - LGA:</label>
-                        <input id='originlocalgovt' onChange={handleOriginLga} type="text" required/>
+                        <input id='originlocalgovt' value={localStorage.getItem('originLga') === null ? '' : localStorage.getItem('originLga')} onChange={handleOriginLga} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="origintown">PLACE OF ORIGIN - TOWN:</label>
-                        <input id='origintown' onChange={handleOriginTown} type="text" required/>
+                        <input id='origintown' value={localStorage.getItem('originTown') === null ? '' : localStorage.getItem('originTown')} onChange={handleOriginTown} type="text" required/>
                       </div>
                   </div>
 
@@ -838,22 +923,22 @@ function Enrolmentform() {
                       <h3 className="block_heading">WHERE IS YOUR FATHER FROM?</h3>
                       <div className="input-field col s12">
                         <label htmlFor="origincountry">PLACE OF ORIGIN - COUNTRY:</label>
-                        <input id='origincountry' onChange={handleFatherOriginCountry} type='text' required/>
+                        <input id='origincountry' value={localStorage.getItem('fatheroriginCountry') === null ? '' : localStorage.getItem('fatheroriginCountry')} onChange={handleFatherOriginCountry} type='text' required/>
                       </div>
                       
                       <div className="input-field col s12">
                         <label htmlFor="originstate">PLACE OF ORIGIN - STATE:</label>
-                        <input id='originstate' onChange={handleFatherOriginState} type="text" required/>
+                        <input id='originstate' value={localStorage.getItem('fatheroriginState') === null ? '' : localStorage.getItem('fatheroriginState')} onChange={handleFatherOriginState} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="originlocalgovt">PLACE OF ORIGIN - LGA:</label>
-                        <input id='originlocalgovt' onChange={handleFatherOriginLga} type="text" required/>
+                        <input id='originlocalgovt' value={localStorage.getItem('fatheroriginLga') === null ? '' : localStorage.getItem('fatheroriginLga')} onChange={handleFatherOriginLga} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="origintown">PLACE OF ORIGIN - TOWN:</label>
-                        <input id='origintown' onChange={handleFatherOriginTown} type="text" required/>
+                        <input id='origintown' value={localStorage.getItem('fatheroriginTown') === null ? '' : localStorage.getItem('fatheroriginTown')} onChange={handleFatherOriginTown} type="text" required/>
                       </div>
                   </div>
 
@@ -862,22 +947,22 @@ function Enrolmentform() {
                       <h3 className="block_heading">WHERE IS YOUR MOTHER FROM?</h3>
                       <div className="input-field col s12">
                         <label htmlFor="origincountry">PLACE OF ORIGIN - COUNTRY:</label>
-                        <input id='origincountry' onChange={handleMotherOriginCountry} type='text' required/>
+                        <input id='origincountry' value={localStorage.getItem('motheroriginCountry') === null ? '' : localStorage.getItem('motheroriginCountry')} onChange={handleMotherOriginCountry} type='text' required/>
                       </div>
                       
                       <div className="input-field col s12">
                         <label htmlFor="originstate">PLACE OF ORIGIN - STATE:</label>
-                        <input id='originstate' onChange={handleMotherOriginState} type="text" required/>
+                        <input id='originstate' value={localStorage.getItem('motheroriginState') === null ? '' : localStorage.getItem('motheroriginState')} onChange={handleMotherOriginState} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="originlocalgovt">PLACE OF ORIGIN - LGA:</label>
-                        <input id='originlocalgovt' onChange={handleMotherOriginLga} type="text" required/>
+                        <input id='originlocalgovt' value={localStorage.getItem('motheroriginLga') === null ? '' : localStorage.getItem('motheroriginLga')} onChange={handleMotherOriginLga} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="origintown">PLACE OF ORIGIN - TOWN:</label>
-                        <input id='origintown' onChange={handleMotherOriginTown} type="text" required/>
+                        <input id='origintown' value={localStorage.getItem('motheroriginTown') === null ? '' : localStorage.getItem('motheroriginTown')} onChange={handleMotherOriginTown} type="text" required/>
                       </div>
                   </div>
 
@@ -902,7 +987,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="height">HEIGHT(CM):</label>
-                        <input id='height' onChange={handleHeight} type="number" required/>
+                        <input id='height' value={localStorage.getItem('height') === null ? '' : localStorage.getItem('height')} onChange={handleHeight} type="number" required/>
                       </div>
 
                       <div className="input-field col s12">
@@ -917,7 +1002,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="nationality">NATIONALITY:</label>
-                        <input id='nationality' onChange={handleNationality} type="text" required/>
+                        <input id='nationality' value={localStorage.getItem('nationality') === null ? '' : localStorage.getItem('nationality')} onChange={handleNationality} type="text" required/>
                       </div>
                   </div>
 
@@ -943,12 +1028,12 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="documentNumber">DOCUMENT NUMBER</label>
-                        <input id='documentNumber' onChange={handleDocumentNumber} type="number" required/>
+                        <input id='documentNumber' value={localStorage.getItem('documentNumber') === null ? '' : localStorage.getItem('documentNumber')} onChange={handleDocumentNumber} type="number" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <p htmlFor="documentExpiryDate">DOCUMENT EXPIRY DATE:</p>
-                        <input id='documentExpiryDate' onChange={handleDocumentExpiryDate} type="date" required/>
+                        <input id='documentExpiryDate' value={localStorage.getItem('documentExpiryDate') === null ? '' : localStorage.getItem('documentExpiryDate')} onChange={handleDocumentExpiryDate} type="date" required/>
                       </div>
                   </div>
                   
@@ -970,17 +1055,17 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="mainNativeLanguageSpoken">NATIVE LANGUAGE SPOKEN:</label>
-                        <input onChange={handleNativeLanguage} id='mainNativeLanguageSpoken' type="text" required/>
+                        <input onChange={handleNativeLanguage} value={localStorage.getItem('nativeLanguage') === null ? '' : localStorage.getItem('nativeLanguage')} id='mainNativeLanguageSpoken' type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="languagesYouReadAndWrite">LANGUAGE YOU READ AND WRITE:</label>
-                        <input onChange={handleLanguagesRead} id='languagesYouReadAndWrite' type="text" required/>
+                        <input onChange={handleLanguagesRead} value={localStorage.getItem('languagesYouReadAndWrite') === null ? '' : localStorage.getItem('languagesYouReadAndWrite')} id='languagesYouReadAndWrite' type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="otherLanguagesSpoken">OTHER LANGUAGE SPOKEN:</label>
-                        <input onChange={handleOtherLanguages} id='otherLanguagesSpoken' type="text" required/>
+                        <input onChange={handleOtherLanguages} value={localStorage.getItem('otherLanguagesSpoken') === null ? '' : localStorage.getItem('otherLanguagesSpoken')} id='otherLanguagesSpoken' type="text" required/>
                       </div>
 
                       <div className="input-field col s6">
@@ -1009,12 +1094,12 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="occupation">OCCUPATION/PROFESSION:</label>
-                        <input onChange={handleOccupation} id='occupation' type="text" required/>
+                        <input onChange={handleOccupation} value={localStorage.getItem('occupation') === null ? '' : localStorage.getItem('occupation')} id='occupation' type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="telephone">TELEPHONE:</label>
-                        <input onChange={handleTelephone} id='telephone' type="tel" required/>
+                        <input onChange={handleTelephone} value={localStorage.getItem('telephone') === null ? '' : localStorage.getItem('telephone')} id='telephone' type="tel" required/>
                       </div>
 
                       <div className="input-field col s12">
@@ -1030,7 +1115,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="emailAddress">EMAIL ADDRESS:</label>
-                        <input id='emailAddress' onChange={handleEmailAddress} type="email" required/>
+                        <input id='emailAddress' value={localStorage.getItem('emailAddress') === null ? '' : localStorage.getItem('emailAddress')} onChange={handleEmailAddress} type="email" required/>
                       </div>
                   </div>
 
@@ -1039,37 +1124,37 @@ function Enrolmentform() {
                       <h3 className="block_heading">DETAILS OF YOUR PARENTS</h3>
                       <div className="input-field col s6">
                         <label htmlFor="fathersSurname">FATHER'S SURNAME:</label>
-                        <input id='fathersSurname' onChange={handleFathersSurname} type='text' required/>
+                        <input id='fathersSurname' value={localStorage.getItem('fathersSurname') === null ? '' : localStorage.getItem('fathersSurname')} onChange={handleFathersSurname} type='text' required/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="fathersFirstName">FATHER'S FIRST NAME:</label>
-                        <input id='fathersFirstName' onChange={handleFathersFirstName} type="text" required/>
+                        <input id='fathersFirstName' value={localStorage.getItem('fathersFirstName') === null ? '' : localStorage.getItem('fathersFirstName')} onChange={handleFathersFirstName} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="fathersMiddleName">FATHER'S MIDDLE NAME:</label>
-                        <input id='fathersMiddleName' onChange={handleFathersMiddleName} type="text" required/>
+                        <input id='fathersMiddleName' value={localStorage.getItem('fathersMiddleName') === null ? '' : localStorage.getItem('fathersMiddleName')} onChange={handleFathersMiddleName} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="fathersNin">FATHER'S NIN(if available):</label>
-                        <input id='fathersNin' onChange={handleFathersNin} type="number" />
+                        <input id='fathersNin' value={localStorage.getItem('fathersNin') === null ? '' : localStorage.getItem('fathersNin')} onChange={handleFathersNin} type="number" />
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="mothersSurname">MOTHER'S SURNAME:</label>
-                        <input id='mothersSurname' onChange={handleMothersSurname} type='text' required/>
+                        <input id='mothersSurname' value={localStorage.getItem('mothersSurname') === null ? '' : localStorage.getItem('mothersSurname')} onChange={handleMothersSurname} type='text' required/>
                       </div>
                       
                       <div className="input-field col s12">
                         <label htmlFor="mothersFirstName">MOTHER'S FIRST NAME:</label>
-                        <input id='mothersFirstName' onChange={handleMothersFirstName} type="text" required/>
+                        <input id='mothersFirstName' value={localStorage.getItem('mothersFirstName') === null ? '' : localStorage.getItem('mothersFirstName')} onChange={handleMothersFirstName} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="mothersMiddleName">MOTHER'S MIDDLE NAME:</label>
-                        <input id='mothersMiddleName' onChange={handleMothersMiddleName} type="text" required/>
+                        <input id='mothersMiddleName' value={localStorage.getItem('mothersMiddleName') === null ? '' : localStorage.getItem('mothersMiddleName')} onChange={handleMothersMiddleName} type="text" required/>
                       </div>
 
                       {/* <div className="input-field col s6">
@@ -1079,7 +1164,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="mothersNin">MOTHER'S NIN(if available):</label>
-                        <input id='mothersNin' onChange={handleMothersNin} type="number" />
+                        <input id='mothersNin' value={localStorage.getItem('mothersNin') === null ? '' : localStorage.getItem('mothersNin')} onChange={handleMothersNin} type="number" />
                       </div>
                   </div>
 
@@ -1088,22 +1173,22 @@ function Enrolmentform() {
                       <h3 className="block_heading">GUARDIAN DETAILS</h3>
                       <div className="input-field col s12">
                         <label htmlFor="guardianSurname">SURNAME:</label>
-                        <input id='guardianSurname' onChange={handleGuardianSurname} type='text' required/>
+                        <input id='guardianSurname' value={localStorage.getItem('guardianSurname') === null ? '' : localStorage.getItem('guardianSurname')} onChange={handleGuardianSurname} type='text' required/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="guardianFirstName">FIRST NAME:</label>
-                        <input id='guardianFirstName' onChange={handleGuardianFirstname} type="text" required/>
+                        <input id='guardianFirstName' value={localStorage.getItem('guardianFirstname') === null ? '' : localStorage.getItem('guardianFirstname')} onChange={handleGuardianFirstname} type="text" required/>
                       </div>
 
                       <div className="input-field col s6">
                         <label htmlFor="guardianMiddleName">MIDDLE NAME:</label>
-                        <input id='guardianMiddleName' onChange={handleGuardianMiddlename} type="text" required/>
+                        <input id='guardianMiddleName' value={localStorage.getItem('guardianMiddlename') === null ? '' : localStorage.getItem('guardianMiddlename')} onChange={handleGuardianMiddlename} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="guardianNin">NATIONAL IDENTIFICATION NUMBER:</label>
-                        <input id='guardianNin' onChange={handleGuardianNin} type="number" />
+                        <input id='guardianNin' value={localStorage.getItem('guardianNin') === null ? '' : localStorage.getItem('guardianNin')} onChange={handleGuardianNin} type="number" />
                       </div>
                   </div>
 
@@ -1112,22 +1197,22 @@ function Enrolmentform() {
                       <h3 className="block_heading">YOUR NEXT OF KIN DETAILS</h3>
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinSurname">SURNAME OF NEXT OF KIN:</label>
-                        <input id='nextOfKinSurname' onChange={handleNextOfKinSurname} type='text' required/>
+                        <input id='nextOfKinSurname' value={localStorage.getItem('nextOfKinSurname') === null ? '' : localStorage.getItem('nextOfKinSurname')} onChange={handleNextOfKinSurname} type='text' required/>
                       </div>
                       
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinFirstName">FIRST NAME OF NEXT OF KIN:</label>
-                        <input id='nextOfKinFirstName' onChange={handleNextOfKinFirstname} type="text" required/>
+                        <input id='nextOfKinFirstName' value={localStorage.getItem('nextOfKinFirstname') === null ? '' : localStorage.getItem('nextOfKinFirstname')} onChange={handleNextOfKinFirstname} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinMiddleName">MIDDLE NAME OF NEXT OF KIN:</label>
-                        <input id='nextOfKinMiddleName' onChange={handleNextOfKinMiddlename} type="text" required/>
+                        <input id='nextOfKinMiddleName' value={localStorage.getItem('nextOfKinMiddlename') === null ? '' : localStorage.getItem('nextOfKinMiddlename')} onChange={handleNextOfKinMiddlename} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinRelationship">RELATIONSHIP WITH OF NEXT OF KIN:</label>
-                        <input id='nextOfKinRelationship' onChange={handleNextOfKinRelationship} type="text" required/>
+                        <input id='nextOfKinRelationship' value={localStorage.getItem('nextOfKinRelationship') === null ? '' : localStorage.getItem('nextOfKinRelationship')} onChange={handleNextOfKinRelationship} type="text" required/>
                       </div>
                   </div>
 
@@ -1136,27 +1221,27 @@ function Enrolmentform() {
                       <h3 className="block_heading">ADDRESS OF YOUR NEXT OF KIN</h3>
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinCountry">COUNTRY OF RESIDENCE:</label>
-                        <input id='nextOfKinCountry' onChange={handleNextOfKinCountry} type='text' required/>
+                        <input id='nextOfKinCountry' value={localStorage.getItem('nextOfKinCountry') === null ? '' : localStorage.getItem('nextOfKinCountry')} onChange={handleNextOfKinCountry} type='text' required/>
                       </div>
                       
                       <div className="input-field col s6">
                         <label htmlFor="nextOfKinState">STATE OF RESIDENCE:</label>
-                        <input id='nextOfKinState' onChange={handleNextOfKinState} type="text" required/>
+                        <input id='nextOfKinState' value={localStorage.getItem('nextOfKinState') === null ? '' : localStorage.getItem('nextOfKinState')} onChange={handleNextOfKinState} type="text" required/>
                       </div>
 
                       <div className="input-field col s6">
                         <label htmlFor="nextOfKinLga">LGA OF RESIDENCE:</label>
-                        <input id='nextOfKinLga' onChange={handleNextOfKinLga} type="text" required/>
+                        <input id='nextOfKinLga' value={localStorage.getItem('nextOfKinLga') === null ? '' : localStorage.getItem('nextOfKinLga')} onChange={handleNextOfKinLga} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinTown">TOWN/CITY OF RESIDENCE:</label>
-                        <input id='nextOfKinTown' onChange={handleNextOfKinTown} type="text" required/>
+                        <input id='nextOfKinTown' value={localStorage.getItem('nextOfKinTown') === null ? '' : localStorage.getItem('nextOfKinTown')} onChange={handleNextOfKinTown} type="text" required/>
                       </div>
 
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinStreet">STREET ADDRESS:</label>
-                        <input id='nextOfKinStreet' onChange={handleNextOfKinStreetAddress} type="text" required/>
+                        <input id='nextOfKinStreet' value={localStorage.getItem('nextOfKinStreetAddress') === null ? '' : localStorage.getItem('nextOfKinStreetAddress')} onChange={handleNextOfKinStreetAddress} type="text" required/>
                       </div>
 
                       {/* <div className="input-field col s6">
@@ -1166,7 +1251,7 @@ function Enrolmentform() {
 
                       <div className="input-field col s12">
                         <label htmlFor="nextOfKinNin">NEXT OF KIN'S NIN:</label>
-                        <input id='nextOfKinNin' onChange={handleNextOfKinNin} type="number" />
+                        <input id='nextOfKinNin' value={localStorage.getItem('nextOfKinNin') === null ? '' : localStorage.getItem('nextOfKinNin')} onChange={handleNextOfKinNin} type="number" />
                       </div>
                   </div>
 
