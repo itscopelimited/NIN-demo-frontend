@@ -1,13 +1,21 @@
 import React from 'react'
 import NIMClogo from './img/nimc.png'
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
+import queryString from 'query-string'
 
 function Receipt() {
-    //https://nin-demoapp.com/?hash=eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IllvdXIgTklOIEZvcm0gYXBwbGljYXRpb24gd2FzIHN1Y2Nlc3NmdWwiLCJkYXRhIjp7ImFtb3VudCI6NTAwMCwiZW1haWwiOiJzdGVwaGVuaWxvcmk0NThAZ21haWwuY29tIiwiY29sbGVjdGlvbiI6eyJub3RpZmljYXRpb25zIjp7ImN1cnJlbnQiOmZhbHNlLCJkYXlUaHJlZSI6ZmFsc2UsImRheVR3byI6ZmFsc2UsImRheU9uZSI6ZmFsc2UsImFXZWVrIjpmYWxzZSwiYW5Ib3VyIjpmYWxzZSwiYU1pbnV0ZSI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0sInllYXIiOjIwMjEsInN0YXR1cyI6IkJvb2tlZCIsInBheW1lbnRTdGF0dXMiOiJQYWlkIiwiX2lkIjoiNjAwNmM4MzA3NGQ2YjIxNjJlOWIzN2M5IiwidXNlcklkIjoiNWZmOGMzMmFkNmY3NGMwMTk5MTExZTgxIiwibmluRm9ybUlkIjoiNjAwNmM4MzA3NGQ2YjIxNjJlOWIzN2M4IiwiYnJhbmNoIjoiTGVra2kiLCJkYXkiOjYsIm1vbnRoIjoiSmFuIiwidGltZSI6IjEwOjAwYW0iLCJfX3YiOjB9LCJzdGF0dXMiOiJTdWNjZXNzZnVsbCIsInBhaWRBdCI6IjIwMjEtMDEtMTlUMTE6NTc6MjYuODk0WiJ9LCJlcnJvcnMiOnt9fQ==  
-    const getHash = new URLSearchParams(window.location.search).get('hash')
-    let hash = window.atob(getHash);
+    //https://nin-demoapp.com/?hash=eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IllvdXIgTklOIEZvcm0gYXBwbGljYXRpb24gd2FzIHN1Y2Nlc3NmdWwiLCJkYXRhIjp7ImFtb3VudCI6NTAwMCwiZW1haWwiOiJzdGVwaGVuaWxvcmk0NThAZ21haWwuY29tIiwiY29sbGVjdGlvbiI6eyJub3RpZmljYXRpb25zIjp7ImN1cnJlbnQiOmZhbHNlLCJkYXlUaHJlZSI6ZmFsc2UsImRheVR3byI6ZmFsc2UsImRheU9uZSI6ZmFsc2UsImFXZWVrIjpmYWxzZSwiYW5Ib3VyIjpmYWxzZSwiYU1pbnV0ZSI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0sInllYXIiOjIwMjEsInN0YXR1cyI6IkJvb2tlZCIsInBheW1lbnRTdGF0dXMiOiJQYWlkIiwiX2lkIjoiNjAwNmM4MzA3NGQ2YjIxNjJlOWIzN2M5IiwidXNlcklkIjoiNWZmOGMzMmFkNmY3NGMwMTk5MTExZTgxIiwibmluRm9ybUlkIjoiNjAwNmM4MzA3NGQ2YjIxNjJlOWIzN2M4IiwiYnJhbmNoIjoiTGVra2kiLCJkYXkiOjYsIm1vbnRoIjoiSmFuIiwidGltZSI6IjEwOjAwYW0iLCJfX3YiOjB9LCJzdGF0dXMiOiJTdWNjZXNzZnVsbCIsInBhaWRBdCI6IjIwMjEtMDEtMTlUMTE6NTc6MjYuODk0WiJ9LCJlcnJvcnMiOnt9fQ== 
+    
+    const getQuery = queryString.parse(useLocation().search);
+    console.log(getQuery)
+    let hash = window.atob(getQuery.hash)
+    console.log(hash)
     let decodedString = JSON.parse(hash)
-    console.log(decodedString)
+    
+    // const getHash = new URLSearchParams(props.location.search).get('hash')
+    // let hash = window.atob(getHash)
+    // let decodedString = JSON.parse(hash)
+    // console.log(decodedString)
 
     // useEffect(() => {
     //     if query from browser not available window.location = '/#/enrolmentForm'
