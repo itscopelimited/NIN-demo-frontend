@@ -39,7 +39,7 @@ function Login() {
             return false
         }
         setLoading(true)
-        await fetch("http://167.99.82.56:5050/api/v1/login",
+        await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/login",
             {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",
