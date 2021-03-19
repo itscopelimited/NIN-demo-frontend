@@ -439,7 +439,7 @@ function Enrolmentform({baseurl}) {
       }
       else{
         setLoading(true)
-        await fetch(`${baseurl}http://167.99.82.56:5050/api/v1/get/collection-time`,
+        await fetch(`${baseurl}/api/v1/get/collection-time`,
             {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",
@@ -636,7 +636,7 @@ function Enrolmentform({baseurl}) {
         return false
       }
       setLoading("submit")
-      await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/create/nin",
+      await fetch(`${baseurl}/api/v1/create/nin`,
           {
               headers: {
                   "Content-Type": "application/json; charset=UTF-8",

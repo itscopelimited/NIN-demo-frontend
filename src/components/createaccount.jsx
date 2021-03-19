@@ -69,7 +69,7 @@ function Createaccount({baseurl}) {
         }
         else{
             setLoading(true)
-            await fetch(`${baseurl}http://167.99.82.56:5050/api/v1/register`,
+            await fetch(`${baseurl}/api/v1/register`,
                 {
                     headers: {
                         "Content-Type": "application/json; charset=UTF-8",

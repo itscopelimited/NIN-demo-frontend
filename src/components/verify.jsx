@@ -28,7 +28,7 @@ function Verify({data, baseurl}) {
         }
         
         setLoading(true)
-        await fetch(`${baseurl}http://167.99.82.56:5050/api/v1/verify/account`,
+        await fetch(`${baseurl}/api/v1/verify/account`,
             {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",

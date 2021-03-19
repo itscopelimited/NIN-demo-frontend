@@ -14,7 +14,7 @@ import Receipt from './components/receipt';
 
 function App() {
   
-  const BASE_URL = 'https://cors.bridged.cc/'
+  const BASE_URL = 'https://cors.bridged.cc/http://167.99.82.56:5050'
 
   return (
     <>
