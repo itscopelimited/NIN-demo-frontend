@@ -14,17 +14,19 @@ import Receipt from './components/receipt';
 
 function App() {
   
+  const BASE_URL = 'https://cors.bridged.cc/'
+
   return (
     <>
       <Router>
         <Switch>
-          <Route path='/' exact component={Home}/>
-          <Route path='/create' component={Createaccount}/>
-          <Route path='/login' component={Login}/>
-          <Route path='/enrolmentform' component={Enrolmentform} />
-          <Route path='/verify' component={Verify} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/receipt' component={Receipt} />
+          <Route path='/' exact render={()=> <Home/>}/>
+          <Route path='/create' render ={() => <Createaccount baseurl = {BASE_URL}/>}/>
+          <Route path='/login' render = {() => <Login baseurl = {BASE_URL} />} />
+          <Route path='/enrolmentform' render = {() => <Enrolmentform baseurl = {BASE_URL}/>} />
+          <Route path='/verify' render = {() => <Verify baseurl = {BASE_URL}/>} />
+          <Route path='/profile' render = {() => <Profile/>} />
+          <Route path='/receipt' render = {() => <Receipt/>} />
         </Switch>
       </Router>
     </>

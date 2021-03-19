@@ -2,7 +2,7 @@ import React,{useState, useEffect}from 'react'
 import NIMClogo from './img/nimc.png'
 import Spinner from './spinner'
 
-function Enrolmentform() {
+function Enrolmentform({baseurl}) {
     const [, setTitle] = useState("")
     const [, setfirstName] = useState("")
     const [, setlastName] = useState("")
@@ -439,7 +439,7 @@ function Enrolmentform() {
       }
       else{
         setLoading(true)
-        await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/get/collection-time",
+        await fetch(`${baseurl}http://167.99.82.56:5050/api/v1/get/collection-time`,
             {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",

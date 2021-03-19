@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 //import Profile from './profile'
 import Spinner from './spinner'
 
-function Login() {
+function Login({baseurl}) {
     const [userEmail, setUserEmail] = useState('')
     const [password, setPassword] = useState('')
     //const [loginResponse, setLoginResponse] = useState('')
@@ -27,6 +27,8 @@ function Login() {
         password: password
     }
 
+    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -40,7 +42,7 @@ function Login() {
         }
         setLoading(true)
         //https://cors-anywhere.herokuapp.com
-        await fetch("https://cors.bridged.cc/http://167.99.82.56:5050/api/v1/login",
+        await fetch(`${baseurl}http://167.99.82.56:5050/api/v1/login`,
             {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import Verify from './verify'
 import Spinner from './spinner'
 
-function Createaccount() {
+function Createaccount({baseurl}) {
 
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -69,7 +69,7 @@ function Createaccount() {
         }
         else{
             setLoading(true)
-            await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/register",
+            await fetch(`${baseurl}http://167.99.82.56:5050/api/v1/register`,
                 {
                     headers: {
                         "Content-Type": "application/json; charset=UTF-8",

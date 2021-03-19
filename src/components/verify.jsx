@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import NIMClogo from './img/nimc.png'
 import Spinner from './spinner'
 
-function Verify({data}) {
+function Verify({data, baseurl}) {
     const [phone] = useState(data.data.phone);
     const [code, setCode] = useState();
     const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ function Verify({data}) {
         }
         
         setLoading(true)
-        await fetch("https://cors-anywhere.herokuapp.com/http://167.99.82.56:5050/api/v1/verify/account",
+        await fetch(`${baseurl}http://167.99.82.56:5050/api/v1/verify/account`,
             {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",
