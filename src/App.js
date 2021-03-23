@@ -20,13 +20,27 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route path='/' exact render={()=> <Home/>}/>
-          <Route path='/create' render ={() => <Createaccount baseurl = {BASE_URL}/>}/>
-          <Route path='/login' render = {() => <Login baseurl = {BASE_URL} />} />
-          <Route path='/enrolmentform' render = {() => <Enrolmentform baseurl = {BASE_URL}/>} />
-          <Route path='/verify' render = {() => <Verify baseurl = {BASE_URL}/>} />
-          <Route path='/profile' render = {() => <Profile/>} />
-          <Route path='/receipt' render = {() => <Receipt/>} />
+          <Route path='/' exact render={()=> 
+            <Home/>}
+          />
+          <Route path='/create' render ={() => 
+            <Createaccount baseurl = {BASE_URL}/>}
+          />
+          <Route path='/login' render = {() => 
+            <Login baseurl = {BASE_URL} />} 
+          />
+          <Route path='/enrolmentform' render = {() => 
+            <Enrolmentform baseurl = {BASE_URL}/>} 
+          />
+          <Route path='/verify' render = {() => 
+            <Verify baseurl = {BASE_URL}/>} 
+          />
+          <Route path='/profile' render = {() => 
+            <Profile/>} 
+          />
+          <Route path='/receipt' render = {() => 
+            <Receipt/>} 
+          />
         </Switch>
       </Router>
     </>

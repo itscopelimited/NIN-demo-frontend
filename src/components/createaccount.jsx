@@ -42,7 +42,7 @@ function Createaccount({baseurl}) {
         password: password
     }
 
-    console.log(formData)
+    //console.log(formData)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -81,7 +81,7 @@ function Createaccount({baseurl}) {
                 })
             .then((response) => response.json() )
             .then((data) => {
-                console.log(data)
+                //console.log(data)
                 if(data.errors.password){
                     alert(`${data.errors.password}`)
                     setLoading(false)
@@ -107,7 +107,7 @@ function Createaccount({baseurl}) {
         }
     }
 
-    if(count === 0){
+    if(responseData === ''){
         return (
             <>
                 <img src={NIMClogo} alt="NIMC Logo" className='nimc'/>
@@ -158,7 +158,7 @@ function Createaccount({baseurl}) {
             </>
         )
     } 
-    else if(count === 1){
+    else{
         return <Verify data={responseData}/>
     }
 }

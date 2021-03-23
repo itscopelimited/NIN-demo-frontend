@@ -9,7 +9,8 @@ function Verify({data, baseurl}) {
     // const [statusCode, setStatusCode] = useState(400)
     // const [verifyResponse, setVerifyResponse] = useState('');
 
-
+    // console.log(data)
+    // console.log(baseurl)
     const handleCode = ({target}) =>{
         setCode(target.value)
     }
@@ -28,7 +29,7 @@ function Verify({data, baseurl}) {
         }
         
         setLoading(true)
-        await fetch(`${baseurl}/api/v1/verify/account`,
+        await fetch(`https://cors.bridged.cc/http://167.99.82.56:5050/api/v1/verify/account`,
             {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",
@@ -40,6 +41,9 @@ function Verify({data, baseurl}) {
             })
         .then((response) => response.json() )
         .then((data) => {
+            if(data.status === 401){
+                setLoading(false)
+            }
             alert(data.message)
             //setStatusCode(data.status)
             window.location='/#/login'
