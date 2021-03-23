@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import NIMClogo from './img/nimc.png'
 import Spinner from './spinner'
 
-function Verify({data, baseurl}) {
+function Verify({data}) {
     const [phone] = useState(data.data.phone);
     const [code, setCode] = useState();
     const [loading, setLoading] = useState(false);
